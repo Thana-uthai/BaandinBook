@@ -1,0 +1,32 @@
+{
+  "id": "wc-problem-mistakes-site",
+  "topic_id": "T17",
+  "slug": "mistakes-site",
+  "section": "problems",
+  "topic_type": "problem",
+  "priority": "P0",
+  "title": "ข้อผิดพลาดเรื่องที่ตั้ง",
+  "source_file": "WEB_CONTENT_P0_PROBLEMS",
+  "source_set": "10",
+  "source_range": "PDF 97L (๑๙๐)",
+  "ref_precision": "PAGE_SIDE",
+  "master_refs": ["MASTER:ชุด10/ข้อผิดพลาด/การเตรียมพื้นที่"],
+  "master_qa": "PASSED",
+  "status": "AI_DRAFT",
+  "provenance": "EDITORIAL",
+  "chapter_note": "บท \"ข้อผิดพลาดที่มักเกิดขึ้นในการสร้างบ้านดิน\" เป็นข้อสังเกตจากประสบการณ์การทำงาน (ชนิดข้อความ A=OPINION_OF_AUTHOR)",
+  "symptom": "ที่ตั้งบางแบบแก้ไม่ได้",
+  "one_line_summary": "ที่ตั้งบางแบบแก้ไม่ได้ และควรสำรวจว่ารอบข้างจะเปลี่ยนไปอย่างไรในอนาคต",
+  "key_points": [
+    { "id": "k1", "text": "พื้นที่ที่เป็นหลุม พื้นที่เอียงเข้าหาด้านทิศตะวันตก (บ้านร้อน) พื้นที่น้ำท่วม และพื้นที่ที่ไม่มีมุมมองสวยๆ เป็นปัญหาที่แก้ไม่ได้ หรือพื้นที่ที่ต้องขนวัสดุอุปกรณ์ข้ามเขาเพราะรถเข้าไม่ถึงทำให้ทำงานช้าลง", "type": "A", "mod": "D", "ref": "PDF 97L (๑๙๐)" },
+    { "id": "k2", "text": "ความเปลี่ยนแปลงของพื้นที่รอบข้างอาจเป็นหายนะ เช่น กลายเป็นสวนพรรณไม้ ทางด่วน ห้างสรรพสินค้า หรือป่าที่กำลังจะถูกตัด อาจมีเพื่อนบ้านที่ไม่สนับสนุนมาทำให้ก่อสร้างหยุดชะงัก โดยเฉพาะถ้าบ้านไม่ได้ขออนุญาตก่อสร้าง", "type": "A", "mod": "Rc", "ref": "PDF 97L (๑๙๐)" }
+  ],
+  "ratios_dimensions": [],
+  "safety_cautions": [],
+  "common_problems": [],
+  "era_notice": null,
+  "source_refs": ["PDF 97L (หนังสือหน้า ๑๙๐)"],
+  "read_original": ["orig:MASTER:ชุด10/ข้อผิดพลาด/การเตรียมพื้นที่"],
+  "related_topics": ["wc-checklist-site-selection", "wc-howto-foundation-drainage"],
+  "editorial_notes": []
+}

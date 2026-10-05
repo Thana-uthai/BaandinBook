@@ -1,0 +1,41 @@
+{
+  "id": "wc-problem-cracking-index",
+  "topic_id": "T21",
+  "slug": "cracking-index",
+  "section": "problems",
+  "topic_type": "problem",
+  "priority": "P0",
+  "title": "ดัชนีปัญหาแตกร้าว",
+  "source_file": "WEB_CONTENT_P0_T21_FINAL",
+  "source_file_note": "canonical = WEB_CONTENT_P0_T21_FINAL (QA_PASSED); supersedes T21 draft section ใน WEB_CONTENT_P0_PROBLEMS.md",
+  "source_set": "04-10",
+  "source_range": "MASTER:ชุด05/เทคนิควิธี และ MASTER:ชุด07/การฉาบผิว",
+  "ref_precision": "PAGE_SIDE",
+  "master_refs": ["MASTER:ชุด05/เทคนิควิธี", "MASTER:ชุด07/การฉาบผิว"],
+  "master_qa": "PASSED",
+  "status": "QA_PASSED",
+  "provenance": "EDITORIAL",
+  "principle": "การ์ดทุกใบสรุปเฉพาะสิ่งที่หนังสือระบุ ไม่มีการเพิ่มวิธีแก้จากความรู้ภายนอก",
+  "one_line_summary": "รอยแตกร้าวมีหลายสาเหตุ จึงต้องดูบริบทของวัสดุ/เทคนิคก่อน ไม่ใช้คำตอบเดียวกับทุกกรณี",
+  "key_points": [],
+  "common_problems_title": "บริบท → สิ่งที่หนังสือบอก",
+  "common_problems": [
+    { "symptom": "ทดสอบดิน", "what_book_says": "ถ้าก้อนทดลองหักยากมาก แสดงว่าดินเหนียวมาก แห้งแล้วแข็งแรงแต่อาจแตกร้าว; การเติมทรายลดความเหนียวและช่วยลดรอยแตกร้าว", "ref": "MASTER:ชุด05/PDF41", "topic": "wc-howto-soil-test" },
+    { "symptom": "อิฐดินดิบ", "what_book_says": "อิฐตัวอย่างแตกร้าวเมื่อแห้ง แสดงว่าดินเหนียวมากเกินไป ต้องเพิ่มส่วนผสมอื่น เช่น ทรายหรือเส้นใย", "ref": "MASTER:ชุด05/PDF41–42", "topic": "wc-howto-adobe" },
+    { "symptom": "อิฐดินดิบ", "what_book_says": "อิฐที่ยังไม่แห้งสนิทเมื่อก่อ ผนังอาจหดตัวและเกิดรอยแตกร้าว", "ref": "MASTER:ชุด05/PDF45", "topic": "wc-howto-adobe" },
+    { "symptom": "อิฐดินดิบ + เสา", "what_book_says": "การหด/ขยายต่างกันระหว่างอิฐกับเสาไม้หรือปูนทำให้เกิดรอยร้าว; หนังสือระบุวิธีลดปัญหาด้วยการเตรียมจุดยึด/ลิ่มหรือตะปู ใช้อิฐแห้ง และจัดรอยต่อให้เหมาะสม", "ref": "MASTER:ชุด05/PDF46–47", "topic": "wc-howto-adobe" },
+    { "symptom": "ดินปั้น (Cob)", "what_book_says": "ทรายน้อยทำให้หดตัวมาก; ถ้าก้อนทดลองเปราะให้เพิ่มดินเหนียว", "ref": "MASTER:ชุด05/PDF47", "topic": "wc-howto-cob" },
+    { "symptom": "ดินปั้นกับโครงไม้ (Wattle & Daub)", "what_book_says": "ผนังดินหุ้มโครงไม้ไผ่แตกร้าวง่าย หนังสือจึงแนะนำให้ดินมีทรายผสมมาก และอาจเพิ่มฟางหรือแกลบเพื่อช่วยป้องกันการแตกร้าว", "ref": "MASTER:ชุด05/PDF49–50; ตอน \"ดินปั้นกับโครงไม้\" → \"คำแนะนำและข้อควรระวัง\" ข้อ 1", "topic": "wc-compare-techniques" },
+    { "symptom": "ฉาบผนัง", "what_book_says": "รอยแตกร้าวสัมพันธ์กับผนังไม่แห้งสนิทก่อนฉาบ การแห้งเร็วจากแดด/ลม ฉาบหนาเกิน หรือทรายน้อย; หนังสือให้ปรับทรายเพิ่มตามผลทดลอง", "ref": "MASTER:ชุด07/PDF65–66", "topic": "wc-howto-plaster" }
+  ],
+  "common_problems_note": "รอยแตกร้าวมีหลายสาเหตุ จึงต้องดูบริบทของวัสดุ/เทคนิคก่อน ไม่ใช้คำตอบเดียวกับทุกกรณี",
+  "safety_cautions": [
+    { "id": "s1", "text": "หน้านี้เป็นดัชนีอาการ ไม่แทนการประเมินโครงสร้างจริง หากรอยร้าวเกี่ยวข้องกับฐานราก ผนังรับน้ำหนัก หรือความมั่นคง ให้ย้อนอ่านหัวข้อโครงสร้าง/ฐานรากที่เกี่ยวข้อง", "type": "C", "mod": "Rc", "ref": "WEB_CONTENT_P0_T21_FINAL" }
+  ],
+  "era_notice": null,
+  "source_refs": ["MASTER:ชุด05/PDF41–50", "MASTER:ชุด07/PDF65–66"],
+  "read_original": ["orig:MASTER:ชุด05/เทคนิควิธี", "orig:MASTER:ชุด07/การฉาบผิว"],
+  "related_topics": ["wc-howto-soil-test", "wc-howto-adobe", "wc-howto-cob", "wc-compare-techniques", "wc-howto-plaster", "wc-howto-foundation-drainage"],
+  "qa_closure": "Wattle & Daub source precision ปิดแล้ว: MASTER ชุด05 PDF49–50; ข้อความอยู่ใน \"คำแนะนำและข้อควรระวัง\" ข้อ 1. เนื้อหาตรงกับ canonical MASTER และไม่เพิ่ม best practice ภายนอก. T21 พร้อมใช้เป็น canonical Web Content P0 version",
+  "editorial_notes": []
+}

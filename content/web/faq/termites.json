@@ -1,0 +1,34 @@
+{
+  "id": "wc-faq-termites",
+  "aliases": ["wc-problem-termites"],
+  "topic_id": "T23",
+  "slug": "termites",
+  "section": "faq",
+  "topic_type": "faq",
+  "priority": "P0",
+  "title": "FAQ: บ้านดินจะมีปัญหาเรื่องปลวกไหม?",
+  "question": "บ้านดินจะมีปัญหาเรื่องปลวกไหม?",
+  "source_file": "WEB_CONTENT_P0_SAFETY_FAQ",
+  "source_set": "11",
+  "source_range": "MASTER:ชุด11/คำถามยอดฮิตข้อ1",
+  "master_refs": ["MASTER:ชุด11/คำถามยอดฮิตข้อ1"],
+  "master_qa": "PASSED",
+  "status": "AI_DRAFT",
+  "provenance": "EDITORIAL",
+  "quick_answer": "หนังสืออธิบายว่าปลวกไม่ได้กินดินเป็นอาหาร แต่ใช้ดินเปียกทำทางเดินเพื่อไปหาไม้ ปัจจัยสำคัญคือไม่ให้น้ำซึมเข้าผนังจากด้านบนหรือด้านล่าง และดูแลบ้านสม่ำเสมอ",
+  "one_line_summary": "ปลวกไม่ได้กินดิน แต่ใช้ดินเปียกทำทางเดินไปหาไม้ สิ่งสำคัญคือกันน้ำซึมเข้าผนังและดูแลบ้านสม่ำเสมอ",
+  "key_points": [
+    { "id": "k1", "text": "ผนังชื้นช่วยให้ปลวกทำอุโมงค์; ฐานรากและหลังคาที่ดีจึงสำคัญ", "type": "F", "mod": "D", "ref": "MASTER:ชุด11/คำถามยอดฮิตข้อ1" },
+    { "id": "k2", "text": "หนังสือยกกรณีบ้านศรีฐานที่ความชื้นและปูนฉาบบังการมองเห็นปัญหา", "type": "F", "mod": "D", "ref": "MASTER:ชุด11/คำถามยอดฮิตข้อ1" },
+    { "id": "k3", "text": "การดูแลบ้านสม่ำเสมอช่วยให้เห็นปลวกก่อนปัญหาลุกลาม", "type": "F", "mod": "Rc", "ref": "MASTER:ชุด11/คำถามยอดฮิตข้อ1" }
+  ],
+  "safety_cautions": [
+    { "id": "s1", "text": "ไม่สรุปว่าบ้านดินไม่มีปลวก; หนังสือระบุว่าปลวกเกิดได้", "type": "C", "mod": "D", "ref": "MASTER:ชุด11/คำถามยอดฮิตข้อ1" }
+  ],
+  "common_problems": [],
+  "era_notice": null,
+  "source_refs": ["MASTER:ชุด11/คำถามยอดฮิตข้อ1"],
+  "read_original": ["orig:MASTER:ชุด11/คำถามยอดฮิตข้อ1"],
+  "related_topics": ["wc-howto-foundation-drainage", "wc-checklist-roof-basics", "wc-faq-rain-melt"],
+  "editorial_notes": ["id นี้ถูกอ้างถึงในหัวข้ออื่นว่า wc-problem-termites (ตาม SPEC EX-02) — เว็บไซต์ map alias ไปยัง wc-faq-termites ซึ่งเป็น id canonical ใน WEB_CONTENT_P0_SAFETY_FAQ"]
+}

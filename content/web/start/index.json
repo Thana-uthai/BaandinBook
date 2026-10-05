@@ -1,0 +1,43 @@
+{
+  "id": "wc-path-beginner",
+  "topic_id": "T05",
+  "slug": "",
+  "section": "start",
+  "section_index": true,
+  "topic_type": "howto",
+  "priority": "P0",
+  "title": "เส้นทางผู้เริ่มต้น",
+  "source_file": "WEB_CONTENT_P0_START",
+  "source_set": "03-08",
+  "source_range": "อ้างแหล่งผ่านหัวข้อปลายทาง",
+  "master_refs": ["รวมของปลายทาง (T01–T04 และหัวข้อที่เกี่ยวข้อง)"],
+  "master_qa": "PASSED",
+  "status": "AI_DRAFT",
+  "provenance": "EDITORIAL",
+  "editorial_label": "เส้นทางที่จัดโดยทีมงาน",
+  "no_new_facts": true,
+  "one_line_summary": "๘ ขั้นให้เดินตามลำดับ ตั้งแต่ตรวจบ้านเดิม ไปจนถึงลงมือสร้างแบบเล็ก",
+  "quick_answer": "เริ่มที่ \"บ้านเดิมพอใช้ไหม\" → รู้จักบ้านดิน → เลือกพื้นที่ → ออกแบบ → ดูดินและทดสอบ → เลือกเทคนิค → เตรียมของ/คน/เวลา (อ่านข้อผิดพลาดที่มักเกิด) → ลงมือสร้างแบบเล็ก",
+  "index_rows": [
+    { "n": 1, "label": "ตรวจบ้านที่มีอยู่", "lead": "ก่อนสร้างใหม่ ลองดูว่าบ้านที่มีพอใช้หรือปรับปรุงได้ไหม (T02 ข้อ 1)", "targets": ["wc-howto-start-here"] },
+    { "n": 2, "label": "รู้จักบ้านดิน", "lead": "บ้านดินคือการใช้ดินเหนียวและวัสดุท้องถิ่น สร้างด้วยการลงแขก (T01)", "targets": ["wc-faq-what-is-earthhouse", "wc-faq-lifespan", "wc-faq-price"] },
+    { "n": 3, "label": "เลือกพื้นที่", "lead": "ใกล้น้ำและดิน น้ำท่วมไม่ถึง ถมที่ให้ผ่านฤดูฝน (T04)", "targets": ["wc-checklist-site-selection"] },
+    { "n": 4, "label": "ออกแบบ", "lead": "คิดให้เล็ก ผนังโค้ง วางตามแดดลม (T03)", "targets": ["wc-howto-design-principles"] },
+    { "n": 5, "label": "ดินและการทดสอบ", "lead": "ดินที่เหมาะมีดินเหนียวประมาณร้อยละ ๒๐-๕๐ และทดสอบด้วยการตกตะกอนและปั้นเส้น (T06–T07)", "targets": ["wc-materials-soil-types", "wc-howto-soil-test"] },
+    { "n": 6, "label": "ฐานรากและระบายน้ำ", "lead": "ป้องกันน้ำทั้งจากฐานรากและหลังคา (T08)", "targets": ["wc-howto-foundation-drainage"] },
+    { "n": 7, "label": "เลือกเทคนิค", "lead": "หนังสือแบ่งเทคนิคที่ทดลองในไทย ๕ แบบ (T09–T13)", "targets": ["wc-compare-techniques", "wc-howto-adobe", "wc-howto-cob", "wc-howto-rammed-earth"] },
+    { "n": 8, "label": "เตรียมของ คน เวลา และลงมือเล็กๆ", "lead": "ประเมินเวลา/เงินให้เผื่อ เริ่มช่วงหน้าหนาว (T02, หน้า \"ข้อผิดพลาด\")", "targets": ["wc-problem-mistakes-time-season", "wc-checklist-site-selection"] }
+  ],
+  "key_points": [],
+  "safety_cautions": [],
+  "safety_note": "ใช้ป้ายของหัวข้อปลายทางเท่านั้น (เช่น ๒๐-๓๐ ปีใน T02, ราคาใน wc-faq-price)",
+  "common_problems": [],
+  "era_notice": null,
+  "source_refs": [],
+  "read_original": [],
+  "related_topics": [],
+  "editorial_notes": [
+    "หน้านี้ไม่มีข้อเท็จจริงใหม่ เป็นลำดับเดินที่ชี้ไปยังหัวข้อจริง ข้อความทุกบรรทัดสรุปจาก T01–T04 และหัวข้อที่เกี่ยวข้อง จึงอ้างแหล่งผ่านหัวข้อปลายทาง",
+    "ตัวเลขขั้นตอน \"๘ ขั้น\" เป็นการจัดลำดับเชิงนำเสนอของผู้จัดทำ ไม่ใช่ลำดับตามต้นฉบับ (ต้นฉบับเรียง ๑๐ ข้อใน T02)"
+  ]
+}

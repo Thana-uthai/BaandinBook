@@ -1,0 +1,30 @@
+{
+  "id": "wc-faq-price",
+  "topic_id": "T26",
+  "slug": "price",
+  "section": "faq",
+  "topic_type": "faq",
+  "priority": "P0",
+  "title": "FAQ: บ้านดินราคาหลังละเท่าไหร่?",
+  "question": "บ้านดินราคาหลังละเท่าไหร่?",
+  "source_file": "WEB_CONTENT_P0_SAFETY_FAQ",
+  "source_set": "11",
+  "source_range": "MASTER:ชุด11/คำถามยอดฮิตข้อ4; PDF108 น.213 Final Source QA VERIFIED",
+  "master_refs": ["MASTER:ชุด11/คำถามยอดฮิตข้อ4", "PDF108 น.213 Final Source QA VERIFIED"],
+  "master_qa": "PASSED",
+  "status": "AI_DRAFT",
+  "provenance": "EDITORIAL",
+  "quick_answer": "ไม่มีราคาตายตัว เพราะขึ้นกับวัสดุ ผู้สร้าง ค่าแรง และสิ่งที่ต้องซื้อ หนังสือยกตัวอย่างบ้าน 3×3 เมตร 2 หลังคู่ที่ชุมชนมั่นยืน สร้างเองและใช้วัสดุที่หาได้ ใช้งบไม่ถึง 2,000 บาท ขณะที่บริบทกรุงเทพฯ แบบจ้างแรงงานและซื้อวัสดุทั้งหมดอาจเป็นหลักแสน",
+  "quick_answer_era": true,
+  "one_line_summary": "ไม่มีราคาตายตัว ตัวอย่างในหนังสือเป็นบริบทปี พ.ศ. 2548",
+  "key_points": [],
+  "safety_cautions": [
+    { "id": "s1", "text": "ห้ามนำ 2,000 บาทไปแสดงเป็นราคาบ้านดินปัจจุบัน", "type": "C", "mod": "F", "ref": "WEB_CONTENT_P0_SAFETY_FAQ", "strong": true }
+  ],
+  "common_problems": [],
+  "era_notice": { "year_be": 2548, "scope": "whole_claim", "kinds": ["price"], "claim_ids": ["quick_answer"], "required": true, "note": "REQUIRED — ตัวเลขราคาเป็นบริบทจากหนังสือ พ.ศ.2548 ไม่ใช่ราคาก่อสร้างปัจจุบัน" },
+  "source_refs": ["MASTER:ชุด11/คำถามยอดฮิตข้อ4", "PDF108 น.213"],
+  "read_original": ["orig:MASTER:ชุด11/คำถามยอดฮิตข้อ4"],
+  "related_topics": ["wc-problem-mistakes-time-season", "wc-problem-mistakes-prep", "wc-howto-start-here"],
+  "editorial_notes": []
+}

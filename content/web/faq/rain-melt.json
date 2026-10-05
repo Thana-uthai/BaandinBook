@@ -1,0 +1,30 @@
+{
+  "id": "wc-faq-rain-melt",
+  "topic_id": "T24",
+  "slug": "rain-melt",
+  "section": "faq",
+  "topic_type": "faq",
+  "priority": "P0",
+  "title": "FAQ: ถ้าฝนตกหนัก บ้านดินจะละลายไหม?",
+  "question": "ถ้าฝนตกหนัก บ้านดินจะละลายไหม?",
+  "source_file": "WEB_CONTENT_P0_SAFETY_FAQ",
+  "source_set": "11",
+  "source_range": "MASTER:ชุด11/คำถามยอดฮิตข้อ2",
+  "master_refs": ["MASTER:ชุด11/คำถามยอดฮิตข้อ2"],
+  "master_qa": "PASSED",
+  "status": "AI_DRAFT",
+  "provenance": "EDITORIAL",
+  "quick_answer": "ดินดิบยังแพ้น้ำ หนังสือจึงเน้นการป้องกัน: สร้างในที่น้ำไม่ท่วมขังและทำชายคายาวเพื่อกันฝน",
+  "one_line_summary": "ดินดิบยังแพ้น้ำ ต้องป้องกันด้วยที่ตั้งที่น้ำไม่ท่วมขังและชายคายาว",
+  "key_points": [
+    { "id": "k1", "text": "การย่ำช่วยให้ดินแน่นและทนน้ำดีขึ้นแต่ไม่ได้ทำให้ดินไม่แพ้น้ำ", "type": "F", "mod": "D", "ref": "MASTER:ชุด11/คำถามยอดฮิตข้อ2" },
+    { "id": "k2", "text": "สี/ผิวฉาบบางสูตรช่วยทนฝนขึ้น แต่ข้อจำกัดเรื่องน้ำยังอยู่", "type": "F", "mod": "D", "ref": "MASTER:ชุด11/คำถามยอดฮิตข้อ2" }
+  ],
+  "safety_cautions": [],
+  "common_problems": [],
+  "era_notice": null,
+  "source_refs": ["MASTER:ชุด11/คำถามยอดฮิตข้อ2"],
+  "read_original": ["orig:MASTER:ชุด11/คำถามยอดฮิตข้อ2"],
+  "related_topics": ["wc-checklist-site-selection", "wc-howto-foundation-drainage", "wc-checklist-roof-basics"],
+  "editorial_notes": []
+}
