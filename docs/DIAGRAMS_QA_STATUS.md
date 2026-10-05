@@ -27,28 +27,33 @@ The six PASS drawings were not touched in C5. The retired C2 status
 
 - **Before (C2, per G3 spec):** 3 panels — lintel extending ≥ 15 cm into the wall on each side (✓),
   lintel cut flush with the frame (✗), and an arch. Source metadata said PDF 056.
-- **After (C5):** 4 panels in source order, drawn as wall sections with the outside on the left:
-  1. ทับหลังแบบเรียบ — plain lintel, water follows the surface under it → ✗ (source 8)
-  2. ทับหลังมีบัวหยดน้ำและแผ่นไม้ — wood board with a drip moulding, water drips clear → ✓ (source 4)
-  3. ทับหลังไม้ท่อนใหญ่ — one large log → ✓ (source 4)
-  4. ทับหลังไม้ท่อนเล็ก — several small logs → ✓ (source 4)
-  The arch panel and the "≥ 15 cm each side" dimension were removed (not in the source figure).
-  The adjacent book text "lintel should be at least 15 cm wide" is shown only as a footnote line
-  labelled as book text, not as part of the figure. Source metadata and `ref_image` now say PDF 055 /
+- **After (C5, revised in C5B):** a vertical sectional schematic, four variants stacked top-to-bottom in
+  source order, each showing wall above the opening / lintel / วงกบ / opening:
+  1. แบบที่ ๑ — plain flat lintel on the frame → ✗ (source 8)
+  2. แบบที่ ๒ — แผ่นไม้ with บัวหยดน้ำ → ✓ (source 4)
+  3. แบบที่ ๓ — ไม้ท่อนใหญ่ → ✓ (source 4)
+  4. แบบที่ ๔ — ไม้ท่อนเล็ก (several logs) → ✓ (source 4)
+  Only the source labels are used (วงกบ, แผ่นไม้, บัวหยดน้ำ, ไม้ท่อนใหญ่, ไม้ท่อนเล็ก). The C5 draft's
+  rain, blue water arrows/drops, "ภายนอก/ภายใน" labels and water-behaviour claims were removed in C5B
+  as unsupported visual inference. The arch panel and the "≥ 15 cm each side" dimension are not drawn.
+  The adjacent book text "lintel should be at least 15 cm wide" appears only as a footnote line
+  labelled as book text, not as figure geometry. Source metadata and `ref_image` say PDF 055 /
   `pdfหน้า055.jpg`; book page ๑๐๗ unchanged.
 - **Caveat for ChatGPT final QA:** `04_ภาพประกอบ` on Drive has no `pdfหน้า055.jpg`, so V07 was drawn
-  from the C5 textual findings (terminology and ✓/✗ per variant), not from the scan itself. The exact
-  geometry of each variant in the book could not be checked by Claude Code.
+  from the C5/C5B textual findings (variant order, labels, ✓/✗), not from the scan itself.
 
 ### V11 น้ำจากหลังคาโดนผนังดิน
 
 - **Before (C2, per G3 spec):** 2 panels — short eave with rain hitting the wall (✗) vs long eave with a
   drainage trench (✓). The ✓ panel does not exist in the source.
-- **After (C5):** the single warning configuration from the scan (`pdfหน้า059.jpg`, lower right):
-  two gable roofs side by side, inner eaves facing each other, roof runoff from both sides falling onto
-  the earthen wall standing between them, water pooling and splashing at the wall head, ✗ (source 8).
+- **After (C5, revised in C5B):** the single warning configuration from the scan (`pdfหน้า059.jpg`,
+  p.๑๑๕ lower figure): two building portions side by side / offset, the eave of the left roof pointing at
+  the adjacent portion, runoff from that roof striking the earthen wall of the adjacent portion, ✗
+  (source 8). Rain is kept (present in the source). The C5 draft's symmetric "both roofs drain onto a
+  central freestanding wall" construction and the base-erosion detail were removed in C5B.
   Caption verbatim: "ระวังน้ำที่ไหลจากหลังคาโดนผนังดิน จะทำให้พังเร็ว". No ✓ panel; no eave-length or
-  trench advice is depicted. The `ok` symbol was removed from the SVG so no ✓ can be rendered.
+  trench advice is depicted. The `ok` symbol is absent from the SVG so no ✓ can be rendered. The adjacent
+  book text (p.๑๑๕ §๓) warns not to let the eave face a direction where the water meets the house wall.
 
 ## Rules kept
 

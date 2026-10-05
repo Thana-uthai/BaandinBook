@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420" role="img" aria-labelledby="t d" font-family="Sarabun, 'Noto Sans Thai', Tahoma, sans-serif" font-size="18">
   <title id="t">V11 ระวังน้ำที่ไหลจากหลังคาโดนผนังดิน จะทำให้พังเร็ว</title>
-  <desc id="d">ภาพเตือนตามต้นฉบับ (เครื่องหมาย ✗): หลังคาจั่วสองส่วนที่อยู่ติดกัน ชายคาด้านในของทั้งสองหลังคาหันเข้าหากัน น้ำฝนที่ไหลจากหลังคาจึงตกลงปะทะผนังดินที่อยู่ระหว่างกลาง น้ำขังและกระเซ็นที่หัวผนัง ทำให้ผนังดินพังเร็ว. ต้นฉบับมีเฉพาะภาพเตือนนี้ ไม่มีภาพเปรียบเทียบแบบถูกต้อง. ที่มา: ภาพลายเส้นต้นฉบับ PDF 059 / หนังสือหน้า ๑๑๕ รูปล่างขวา · วาดใหม่ตามผลตรวจเทียบสแกน C5 (ChatGPT) · EDITORIAL (D008)</desc>
+  <desc id="d">ภาพเตือนตามต้นฉบับ (เครื่องหมาย ✗ ต้นฉบับ 8): อาคารสองส่วนอยู่ติดกัน ชายคาของหลังคาส่วนซ้ายหันไปทางส่วนขวา น้ำฝนที่ไหลจากหลังคาส่วนซ้ายจึงตกลงโดนผนังดินของส่วนที่อยู่ติดกัน. ข้อความในหนังสือเตือนว่าอย่าให้ชายคาหันไปในทิศทางที่น้ำจะไปเจอกับผนังบ้าน เพราะน้ำฝนจะชะทำให้ผนังพังได้. ต้นฉบับมีเฉพาะภาพเตือนนี้ ไม่มีภาพเปรียบเทียบแบบถูกต้อง. ที่มา: ภาพลายเส้นต้นฉบับ PDF 059 / หนังสือหน้า ๑๑๕ รูปล่าง · วาดใหม่ตามผลตรวจเทียบสแกน C5/C5B (ChatGPT) · EDITORIAL (D008)</desc>
   <defs>
     <symbol id="no" viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#c62828"/><path d="M12 12 L28 28 M28 12 L12 28" stroke="#fff" stroke-width="4.5" stroke-linecap="round"/></symbol>
     <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#3b7dd8"/></marker>
-    <pattern id="earth" width="12" height="12" patternUnits="userSpaceOnUse"><rect width="12" height="12" fill="#d9b38c"/><path d="M0 12 L12 0" stroke="#a9794a" stroke-width="1.5"/></pattern>
+    <pattern id="earth" width="12" height="12" patternUnits="userSpaceOnUse"><rect width="12" height="12" fill="#e8d7c3"/><path d="M0 12 L12 0" stroke="#9c7a56" stroke-width="1.4"/></pattern>
   </defs>
   <rect width="800" height="420" fill="#fff"/>
   <!-- caption verbatim from the book figure -->
   <text x="400" y="34" text-anchor="middle" font-weight="700">ระวังน้ำที่ไหลจากหลังคาโดนผนังดิน จะทำให้พังเร็ว</text>
-  <!-- rain across the whole scene -->
+  <!-- rain (present in the source) -->
   <g stroke="#9ec5ee" stroke-width="2" stroke-linecap="round">
     <g id="rain"><line x1="60" y1="60" x2="50" y2="84"/><line x1="100" y1="70" x2="90" y2="94"/><line x1="140" y1="56" x2="130" y2="80"/><line x1="180" y1="72" x2="170" y2="96"/><line x1="220" y1="58" x2="210" y2="82"/><line x1="260" y1="74" x2="250" y2="98"/><line x1="300" y1="60" x2="290" y2="84"/><line x1="340" y1="76" x2="330" y2="100"/><line x1="380" y1="62" x2="370" y2="86"/></g>
     <use href="#rain" x="340"/>
@@ -18,39 +18,33 @@
   </g>
   <!-- ground -->
   <rect x="20" y="340" width="760" height="14" fill="#333"/>
-  <!-- LEFT building portion -->
-  <rect x="90" y="222" width="230" height="118" fill="#f3e9dc" stroke="#5a3b1c" stroke-width="2"/>
-  <path d="M60 232 L205 118 L352 232" fill="none" stroke="#5a3b1c" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
-  <path d="M60 232 L205 118 L352 232 L340 232 L205 130 L72 232 Z" fill="#c98a4c"/>
-  <!-- RIGHT building portion -->
-  <rect x="480" y="222" width="230" height="118" fill="#f3e9dc" stroke="#5a3b1c" stroke-width="2"/>
-  <path d="M448 232 L595 118 L740 232" fill="none" stroke="#5a3b1c" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
-  <path d="M448 232 L595 118 L740 232 L728 232 L595 130 L460 232 Z" fill="#c98a4c"/>
-  <!-- earthen wall standing between the two roof portions -->
-  <rect x="372" y="214" width="56" height="126" fill="url(#earth)" stroke="#5a3b1c" stroke-width="2"/>
-  <!-- water collecting on top of the wall between the inner eaves -->
-  <path d="M352 232 q10 -12 20 -6 q10 -10 28 -6 q10 -8 20 -2 q10 -10 28 14 L428 232 Z" fill="#7fb3e6" opacity="0.85"/>
-  <!-- runoff from both inner roof slopes into the gap -->
-  <g stroke="#3b7dd8" stroke-width="3" fill="none" marker-end="url(#arr)">
-    <path d="M300 150 L348 222"/>
-    <path d="M500 150 L452 222"/>
+
+  <!-- RIGHT building portion (taller / offset); its left earthen wall stands in the runoff path -->
+  <rect x="420" y="150" width="300" height="190" fill="url(#earth)" stroke="#5a3b1c" stroke-width="2.5"/>
+  <path d="M392 160 L570 60 L748 160 L736 160 L570 72 L404 160 Z" fill="#c98a4c"/>
+  <path d="M392 160 L570 60 L748 160" fill="none" stroke="#5a3b1c" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- LEFT building portion (lower); its right eave points at the adjacent wall -->
+  <rect x="90" y="236" width="300" height="104" fill="#f6efe4" stroke="#5a3b1c" stroke-width="2.5"/>
+  <path d="M60 246 L240 150 L420 246 L408 246 L240 162 L72 246 Z" fill="#c98a4c"/>
+  <path d="M60 246 L240 150 L420 246" fill="none" stroke="#5a3b1c" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- runoff from the left roof flowing to its eave and striking the adjacent earthen wall -->
+  <g stroke="#3b7dd8" stroke-width="3.5" fill="none" stroke-linecap="round">
+    <path d="M270 170 L408 243" marker-end="url(#arr)"/>
   </g>
-  <!-- water running down the wall faces and splashing -->
+  <g fill="#7fb3e6" opacity="0.9"><path d="M406 240 q8 -12 16 -2 q6 4 2 12 q-10 4 -18 -2 Z"/></g>
   <g stroke="#3b7dd8" stroke-width="2.5" fill="none" stroke-linecap="round">
-    <path d="M366 236 q-6 14 0 28 q-6 14 0 28 q-6 12 0 24"/>
-    <path d="M434 236 q6 14 0 28 q6 14 0 28 q6 12 0 24"/>
-    <path d="M344 240 l-12 10"/><path d="M456 240 l12 10"/>
-    <path d="M338 262 l-10 12"/><path d="M462 262 l10 12"/>
+    <path d="M424 252 q-5 14 0 28 q-5 14 0 28 q-4 12 0 22"/>
+    <path d="M414 240 l-12 -10"/><path d="M416 262 l-14 2"/><path d="M416 284 l-12 8"/>
   </g>
-  <g fill="#3b7dd8">
-    <ellipse cx="330" cy="300" rx="4" ry="6"/><ellipse cx="322" cy="326" rx="3.5" ry="5"/><ellipse cx="470" cy="300" rx="4" ry="6"/><ellipse cx="478" cy="326" rx="3.5" ry="5"/>
-    <ellipse cx="352" cy="320" rx="3" ry="5"/><ellipse cx="448" cy="320" rx="3" ry="5"/>
-  </g>
-  <!-- erosion at the base of the wall -->
-  <g fill="#b58a5e" stroke="#5a3b1c" stroke-width="1"><path d="M372 300 q-10 8 -4 18 q-8 10 2 22 L372 340 Z"/><path d="M428 300 q10 8 4 18 q8 10 -2 22 L428 340 Z"/></g>
+  <g fill="#3b7dd8"><ellipse cx="438" cy="270" rx="3" ry="5"/><ellipse cx="398" cy="300" rx="3.5" ry="6"/><ellipse cx="444" cy="300" rx="3" ry="5"/><ellipse cx="404" cy="326" rx="3" ry="5"/></g>
+
   <!-- labels (editorial, minimal) -->
-  <text x="400" y="372" text-anchor="middle" font-size="15" fill="#c62828">น้ำจากหลังคาทั้งสองด้านไหลลงโดนผนังดินที่อยู่ระหว่างกลาง</text>
-  <text x="400" y="398" text-anchor="middle" font-size="14" fill="#555">ที่มา: หนังสือหน้า ๑๑๕ (PDF 059) · ต้นฉบับมีเฉพาะภาพเตือน (เครื่องหมาย ✗) · วาดใหม่ · EDITORIAL (D008)</text>
+  <line x1="480" y1="300" x2="560" y2="300" stroke="#333" stroke-width="1"/>
+  <text x="566" y="305" font-size="15" fill="#333">ผนังดินของอาคารส่วนที่อยู่ติดกัน</text>
+  <text x="400" y="378" text-anchor="middle" font-size="15" fill="#c62828">น้ำจากหลังคาส่วนซ้ายไหลลงโดนผนังดินของส่วนขวา</text>
+  <text x="400" y="402" text-anchor="middle" font-size="14" fill="#555">ที่มา: หนังสือหน้า ๑๑๕ (PDF 059) · ต้นฉบับมีเฉพาะภาพเตือน (เครื่องหมาย ✗) · วาดใหม่ · EDITORIAL (D008)</text>
   <!-- source symbol 8 → ✗ -->
-  <use href="#no" x="700" y="150" width="52" height="52"/>
+  <use href="#no" x="724" y="90" width="52" height="52"/>
 </svg>
