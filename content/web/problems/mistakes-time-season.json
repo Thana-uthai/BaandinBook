@@ -33,7 +33,7 @@
     { "id": "s1", "text": "ผนังเปียกต่อเนื่องในหน้าฝนทำให้ฟาง/แกลบเน่า", "type": "C", "mod": "D", "ref": "PDF 96R (๑๘๙)", "from_claim": "k3" }
   ],
   "common_problems": [],
-  "era_notice": { "year_be": 2548, "scope": "inline", "kinds": ["statement-of-present"], "claim_ids": ["ratio-3x-2x"], "proposed": true, "decision_pending": true, "note": "ไม่ติดอัตโนมัติ — ข้อเสนอให้ ChatGPT ตัดสินว่าตัวเลข \"๓ เท่า/๒ เท่า\" เป็น statement-of-present หรือไม่" },
+  "era_notice": { "year_be": 2548, "scope": "inline", "kinds": ["statement-of-present"], "claim_ids": ["ratio-3x-2x"], "confirmed_by": "ChatGPT QA — CCR-02 (5 ต.ค. 2569)", "note": "ตัวเลข \"๓ เท่า/๒ เท่า\" เป็นข้อสังเกตจากประสบการณ์ของผู้เขียนในหนังสือ พ.ศ. 2548 (บริบทตามยุคของหนังสือ)" },
   "source_refs": ["PDF 96L–97L (หนังสือหน้า ๑๘๘–๑๙๐)"],
   "read_original": ["orig:MASTER:ชุด10/ข้อผิดพลาดที่มักเกิดขึ้นในการสร้างบ้านดิน"],
   "related_topics": ["wc-howto-start-here", "wc-faq-price", "wc-problem-mistakes-prep"],

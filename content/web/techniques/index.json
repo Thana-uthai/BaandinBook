@@ -53,7 +53,7 @@
     { "id": "s3", "text": "ฟางอัด: ความชื้นเข้าฟางทำให้โครงสร้างเสียหายมาก", "type": "C", "mod": "D", "ref": "PDF 52R" }
   ],
   "common_problems": [],
-  "era_notice": { "year_be": 2548, "scope": "inline", "kinds": ["law", "statement-of-present"], "claim_ids": ["row-strawbale", "row-cob"], "proposed": true, "note": "ข้อเสนอ (ให้ ChatGPT ยืนยัน): (ก) law ที่ประโยค \"ในบางประเทศที่มีกฎหมายรองรับ…\" ของฟางอัด (PDF 52R) · (ข) statement-of-present ที่ประโยค \"เป็นวิธีที่นิยมกันมากในอเมริกาและแถบอังกฤษ\" ของดินปั้น (PDF 47)" },
+  "era_notice": { "year_be": 2548, "scope": "inline", "kinds": ["law", "statement-of-present"], "claim_ids": ["row-strawbale", "row-cob"], "confirmed_by": "ChatGPT QA — CCR-02 (5 ต.ค. 2569)", "note": "(ก) law ที่ประโยค \"ในบางประเทศที่มีกฎหมายรองรับ…\" ของฟางอัด (PDF 52R) · (ข) statement-of-present ที่ประโยค \"เป็นวิธีที่นิยมกันมากในอเมริกาและแถบอังกฤษ\" ของดินปั้น (PDF 47)" },
   "source_refs": ["PDF 39R–52R (หนังสือหน้า ๗๕–๑๐๑)"],
   "read_original": ["orig:MASTER:ชุด04-06/เทคนิควิธี"],
   "related_topics": ["wc-howto-adobe", "wc-howto-cob", "wc-howto-rammed-earth", "wc-materials-soil-types"],

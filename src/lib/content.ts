@@ -66,6 +66,8 @@ export interface EraNotice {
   note?: string;
   proposed?: boolean;
   decision_pending?: boolean;
+  /** set once ChatGPT QA has confirmed a previously proposed notice (e.g. "ChatGPT QA — CCR-02 (5 ต.ค. 2569)") */
+  confirmed_by?: string;
   required?: boolean;
 }
 
