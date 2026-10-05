@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="800" height="560" role="img" aria-labelledby="t d" font-family="Sarabun, 'Noto Sans Thai', Tahoma, sans-serif" font-size="18">
+  <title id="t">V01 การวางตัวบ้านตามทิศทาง แดด ลม ฝน</title>
+  <desc id="d">ผังเปรียบเทียบ 2 แบบ แบบที่ถูกต้องคือวางตัวบ้านยาวตามแนวทิศตะวันออก-ตะวันตกเพื่อหลบแดดและรับลมเหนือ-ใต้ (ถูก ✓) แบบที่วางยาวตามแนวเหนือ-ใต้ ผนังด้านยาวปะทะแดดเต็มที่ (ผิด ✗). ที่มา: ภาพสเก็ตช์ต้นฉบับ PDF 031 / หนังสือหน้า ๕๙ · วาดใหม่ตามสเปก G3 · EDITORIAL (D008)</desc>
+  <defs>
+    <symbol id="ok" viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#2e7d32"/><polyline points="10,21 17,28 30,13" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="no" viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#c62828"/><path d="M12 12 L28 28 M28 12 L12 28" stroke="#fff" stroke-width="4.5" stroke-linecap="round"/></symbol>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#3b7dd8"/></marker>
+  </defs>
+  <rect width="800" height="560" fill="#fff"/>
+  <!-- compass -->
+  <g transform="translate(720 70)" font-weight="700" text-anchor="middle">
+    <circle r="34" fill="none" stroke="#555" stroke-width="2"/>
+    <path d="M0 -30 L8 0 L0 -6 L-8 0 Z" fill="#333"/>
+    <text y="-42">เหนือ</text><text y="58">ใต้</text><text x="56" y="6">ออก</text><text x="-56" y="6">ตก</text>
+  </g>
+  <!-- TOP: correct -->
+  <g>
+    <text x="24" y="36" font-weight="700" font-size="20">แบบที่ถูกต้อง: วางตัวบ้านยาวตามแนวตะวันออก–ตะวันตก</text>
+    <!-- sun east and west -->
+    <g fill="#f4b400" stroke="#d99a00"><circle cx="90" cy="150" r="22"/><circle cx="610" cy="150" r="22"/></g>
+    <text x="90" y="200" text-anchor="middle" font-size="15">แดดเช้า (ออก)</text>
+    <text x="610" y="200" text-anchor="middle" font-size="15">แดดเย็น (ตก)</text>
+    <!-- eave (long overhang) -->
+    <rect x="180" y="100" width="340" height="110" fill="#e9dcc8" stroke="#9c7b53" stroke-dasharray="6 4"/>
+    <!-- house body -->
+    <rect x="205" y="118" width="290" height="74" fill="#d9b38c" stroke="#5a3b1c" stroke-width="3"/>
+    <text x="350" y="162" text-anchor="middle" font-size="16">ด้านยาว = ด้านเหนือ–ใต้ (รับลม)</text>
+    <text x="350" y="232" text-anchor="middle" font-size="14" fill="#5a3b1c">ชายคายื่นยาวบังแดด (เส้นประ)</text>
+    <!-- wind arrows N and S -->
+    <g stroke="#3b7dd8" stroke-width="3" fill="none" marker-end="url(#arr)">
+      <line x1="300" y1="60" x2="300" y2="96"/><line x1="400" y1="60" x2="400" y2="96"/>
+      <line x1="300" y1="262" x2="300" y2="226"/><line x1="400" y1="262" x2="400" y2="226"/>
+    </g>
+    <text x="350" y="56" text-anchor="middle" font-size="15" fill="#3b7dd8">ลมเหนือ–ใต้</text>
+    <use href="#ok" x="540" y="90" width="48" height="48"/>
+  </g>
+  <line x1="24" y1="290" x2="776" y2="290" stroke="#bbb" stroke-dasharray="8 6"/>
+  <!-- BOTTOM: wrong -->
+  <g>
+    <text x="24" y="326" font-weight="700" font-size="20">แบบที่ไม่แนะนำ: วางตัวบ้านยาวตามแนวเหนือ–ใต้</text>
+    <g fill="#f4b400" stroke="#d99a00"><circle cx="90" cy="440" r="22"/><circle cx="610" cy="440" r="22"/></g>
+    <text x="90" y="490" text-anchor="middle" font-size="15">แดดเช้า (ออก)</text>
+    <text x="610" y="490" text-anchor="middle" font-size="15">แดดเย็น (ตก)</text>
+    <!-- sun rays hitting long walls -->
+    <g stroke="#f4b400" stroke-width="3"><line x1="118" y1="430" x2="300" y2="400"/><line x1="118" y1="440" x2="300" y2="440"/><line x1="118" y1="450" x2="300" y2="480"/><line x1="582" y1="430" x2="400" y2="400"/><line x1="582" y1="440" x2="400" y2="440"/><line x1="582" y1="450" x2="400" y2="480"/></g>
+    <rect x="310" y="345" width="80" height="190" fill="#d9b38c" stroke="#5a3b1c" stroke-width="3"/>
+    <text x="350" y="548" text-anchor="middle" font-size="15" fill="#c62828">ผนังด้านยาวปะทะแดดเต็มที่</text>
+    <use href="#no" x="420" y="340" width="48" height="48"/>
+  </g>
+</svg>

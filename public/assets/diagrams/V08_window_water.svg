@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420" role="img" aria-labelledby="t d" font-family="Sarabun, 'Noto Sans Thai', Tahoma, sans-serif" font-size="18">
+  <title id="t">V08 ขอบหน้าต่างต้องระวังไม่ให้น้ำขัง</title>
+  <desc id="d">ภาพตัดขวางขอบหน้าต่างด้านนอก: แบบถูกต้อง ขอบผนังดินใต้กรอบวงกบปาดเอียงลาดลงด้านนอก น้ำฝนไหลออกทันที (✓); แบบผิด ขอบทำเป็นระนาบ/ตั้งฉาก น้ำฝนขังและซึมเข้าผนังจนผนังพัง (✗). ที่มา: ภาพลายเส้นต้นฉบับ PDF 057 / หนังสือหน้า ๑๑๐ · วาดใหม่ตามสเปก G3 · EDITORIAL (D008)</desc>
+  <defs>
+    <symbol id="ok" viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#2e7d32"/><polyline points="10,21 17,28 30,13" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="no" viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#c62828"/><path d="M12 12 L28 28 M28 12 L12 28" stroke="#fff" stroke-width="4.5" stroke-linecap="round"/></symbol>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#3b7dd8"/></marker>
+  </defs>
+  <rect width="800" height="420" fill="#fff"/>
+  <text x="400" y="34" text-anchor="middle" font-weight="700" font-size="20">ภาพตัดขวางขอบล่างหน้าต่าง (ด้านนอกอยู่ซ้าย · ด้านในอยู่ขวา)</text>
+  <!-- LEFT: sloped sill -->
+  <g>
+    <text x="200" y="68" text-anchor="middle" font-size="16">ขอบปาดเอียงลาดลงด้านนอก</text>
+    <!-- wall section below window -->
+    <path d="M110 200 L290 160 L290 360 L110 360 Z" fill="#d9b38c" stroke="#5a3b1c" stroke-width="3"/>
+    <!-- window frame + glass above -->
+    <rect x="200" y="90" width="90" height="70" fill="#8a5a2b" stroke="#3d2a16" stroke-width="2"/>
+    <rect x="212" y="98" width="66" height="54" fill="#cfe8f7" stroke="#3d2a16"/>
+    <!-- slope label -->
+    <text x="150" y="150" font-size="14" fill="#1d4ed8">ลาดเอียง</text>
+    <!-- water drops running off -->
+    <g fill="#3b7dd8"><circle cx="255" cy="150" r="4"/><circle cx="215" cy="162" r="4"/><circle cx="175" cy="172" r="4"/><circle cx="135" cy="183" r="4"/></g>
+    <path d="M275 148 L120 190" fill="none" stroke="#3b7dd8" stroke-width="3" marker-end="url(#arr)"/>
+    <text x="90" y="220" text-anchor="end" font-size="14" fill="#3b7dd8">น้ำฝนไหลออก</text>
+    <text x="200" y="300" text-anchor="middle" font-size="15">ผนังดิน</text>
+    <text x="200" y="395" text-anchor="middle" font-weight="700">ระบายน้ำทันที — ถูกต้อง</text>
+    <use href="#ok" x="310" y="200" width="48" height="48"/>
+  </g>
+  <line x1="400" y1="50" x2="776" y2="50" stroke="none"/><line x1="400" y1="50" x2="400" y2="400" stroke="#bbb" stroke-dasharray="8 6"/>
+  <!-- RIGHT: flat ledge -->
+  <g>
+    <text x="600" y="68" text-anchor="middle" font-size="16">ขอบระนาบ/ตั้งฉาก</text>
+    <path d="M510 160 L690 160 L690 360 L510 360 Z" fill="#d9b38c" stroke="#5a3b1c" stroke-width="3"/>
+    <rect x="600" y="90" width="90" height="70" fill="#8a5a2b" stroke="#3d2a16" stroke-width="2"/>
+    <rect x="612" y="98" width="66" height="54" fill="#cfe8f7" stroke="#3d2a16"/>
+    <!-- pooled water -->
+    <path d="M512 160 q45 -14 88 0 Z" fill="#3b7dd8" opacity="0.85"/>
+    <g fill="#3b7dd8"><circle cx="540" cy="135" r="4"/><circle cx="570" cy="128" r="4"/></g>
+    <text x="556" y="118" text-anchor="middle" font-size="14" fill="#1d4ed8">น้ำขัง</text>
+    <!-- seepage arrows into wall -->
+    <g stroke="#3b7dd8" stroke-width="2.5" fill="none" marker-end="url(#arr)"><path d="M540 165 L540 215"/><path d="M570 165 L575 225"/><path d="M600 165 L610 215"/></g>
+    <!-- damage -->
+    <g stroke="#c62828" stroke-width="2.5" fill="none"><path d="M525 250 l10 14 l-6 14 l10 16"/><path d="M590 240 l-8 16 l10 12 l-6 18"/></g>
+    <text x="600" y="395" text-anchor="middle" font-weight="700" fill="#c62828">น้ำขังซึมเข้าผนัง ทำให้ผนังพัง</text>
+    <use href="#no" x="700" y="200" width="48" height="48"/>
+  </g>
+</svg>

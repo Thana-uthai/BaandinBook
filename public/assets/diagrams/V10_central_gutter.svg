@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400" role="img" aria-labelledby="t d" font-family="Sarabun, 'Noto Sans Thai', Tahoma, sans-serif" font-size="18">
+  <title id="t">V10 รางน้ำกลางบ้านที่มีโอกาสรั่ว</title>
+  <desc id="d">ผังเตือนอันตราย: หลังคาสองจั่วลาดเข้าหากันทำให้เกิดร่องรางน้ำตรงกลางบ้าน เมื่ออุดตัน น้ำฝนที่ระบายไม่ทันจะล้นเข้าสู่ผนังดินภายใน (ข้อควรหลีกเลี่ยงอย่างยิ่ง ✗). ที่มา: ภาพลายเส้นต้นฉบับ PDF 059 / หนังสือหน้า ๑๑๕ รูปบน · วาดใหม่ตามสเปก G3 · EDITORIAL (D008)</desc>
+  <defs>
+    <symbol id="no" viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#c62828"/><path d="M12 12 L28 28 M28 12 L12 28" stroke="#fff" stroke-width="4.5" stroke-linecap="round"/></symbol>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#3b7dd8"/></marker>
+  </defs>
+  <rect width="800" height="400" fill="#fff"/>
+  <text x="400" y="34" text-anchor="middle" font-weight="700" font-size="20">ข้อควรระวัง: รางน้ำตรงกลางบ้าน</text>
+  <!-- rain -->
+  <g stroke="#9ec5ee" stroke-width="2"><line x1="120" y1="50" x2="112" y2="74"/><line x1="200" y1="50" x2="192" y2="74"/><line x1="280" y1="50" x2="272" y2="74"/><line x1="520" y1="50" x2="512" y2="74"/><line x1="600" y1="50" x2="592" y2="74"/><line x1="680" y1="50" x2="672" y2="74"/></g>
+  <!-- two gables sloping toward centre -->
+  <path d="M60 200 L220 90 L400 200" fill="#c98a4c" stroke="#5a3b1c" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M400 200 L580 90 L740 200" fill="#c98a4c" stroke="#5a3b1c" stroke-width="4" stroke-linejoin="round"/>
+  <!-- central valley gutter -->
+  <path d="M370 200 Q400 222 430 200" fill="#888" stroke="#333" stroke-width="3"/>
+  <!-- clog -->
+  <g fill="#6b4b2c"><circle cx="392" cy="206" r="6"/><circle cx="406" cy="208" r="5"/><circle cx="400" cy="200" r="5"/></g>
+  <text x="400" y="182" text-anchor="middle" font-size="14" fill="#333">ร่องรางน้ำกลางบ้าน (อุดตัน)</text>
+  <!-- water flowing from both roofs into the valley -->
+  <g stroke="#3b7dd8" stroke-width="3" fill="none" marker-end="url(#arr)"><path d="M240 110 L380 196"/><path d="M560 110 L420 196"/></g>
+  <!-- overflow into the house -->
+  <path d="M380 212 q20 10 40 0 Z" fill="#3b7dd8"/>
+  <g stroke="#3b7dd8" stroke-width="3" fill="none" marker-end="url(#arr)"><path d="M400 216 L400 300"/><path d="M392 216 L360 290"/><path d="M408 216 L440 290"/></g>
+  <!-- walls -->
+  <rect x="120" y="200" width="560" height="150" fill="#d9b38c" stroke="#5a3b1c" stroke-width="3"/>
+  <rect x="120" y="200" width="560" height="150" fill="none" stroke="#5a3b1c" stroke-width="3"/>
+  <text x="200" y="285" text-anchor="middle" font-size="15">ผนังดินภายใน</text>
+  <text x="600" y="285" text-anchor="middle" font-size="15">ผนังดินภายใน</text>
+  <text x="400" y="340" text-anchor="middle" font-size="15" fill="#c62828" font-weight="700">น้ำล้นทะลักเข้าสู่ตัวบ้าน</text>
+  <text x="400" y="385" text-anchor="middle" font-weight="700" fill="#c62828">ควรหลีกเลี่ยงอย่างยิ่งในการสร้างบ้านดิน</text>
+  <use href="#no" x="690" y="100" width="52" height="52"/>
+</svg>

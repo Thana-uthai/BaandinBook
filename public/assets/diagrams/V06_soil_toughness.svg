@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420" role="img" aria-labelledby="t d" font-family="Sarabun, 'Noto Sans Thai', Tahoma, sans-serif" font-size="18">
+  <title id="t">V06 การทดสอบความเหนียวของดินย่ำ</title>
+  <desc id="d">รอยเท้าในบ่อย่ำดิน เมื่อยกเท้าขึ้นแล้วดินไม่ยุบตัวกลบรอยเท้า ขอบคงรูป แสดงว่าความเหนียวพอดีพร้อมนำไปใส่ไม้แบบ (✓) ถ้าดินเหลวเกินไป เนื้อดินไหลลงมากลบรอยเท้า ต้องเพิ่มทราย/แกลบ (✗). ที่มา: ภาพลายเส้นต้นฉบับ PDF 044 / หนังสือหน้า ๘๔ · วาดใหม่ตามสเปก G3 · EDITORIAL (D008)</desc>
+  <defs>
+    <symbol id="ok" viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#2e7d32"/><polyline points="10,21 17,28 30,13" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="no" viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#c62828"/><path d="M12 12 L28 28 M28 12 L12 28" stroke="#fff" stroke-width="4.5" stroke-linecap="round"/></symbol>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#333"/></marker>
+  </defs>
+  <rect width="800" height="420" fill="#fff"/>
+  <text x="400" y="34" text-anchor="middle" font-weight="700" font-size="20">เหยียบลงในดินย่ำ แล้วยกเท้าขึ้น ดูว่ารอยเท้าคงรูปหรือไม่</text>
+  <!-- LEFT: holds shape -->
+  <g>
+    <text x="200" y="70" text-anchor="middle" font-size="16">ดินเหนียวพอดี</text>
+    <!-- foot lifted -->
+    <path d="M165 90 q35 -18 70 0 q6 14 -6 22 q-30 8 -58 0 q-12 -8 -6 -22z" fill="#e3c9a8" stroke="#5a3b1c" stroke-width="2"/>
+    <line x1="200" y1="120" x2="200" y2="150" stroke="#333" stroke-width="3" marker-end="url(#arr)" transform="rotate(180 200 135)"/>
+    <!-- pit surface -->
+    <rect x="60" y="190" width="280" height="150" fill="#a9825b" stroke="#5a3b1c" stroke-width="2"/>
+    <!-- footprint with crisp edges -->
+    <path d="M160 215 q40 -14 80 0 q10 24 -4 46 q-10 36 -36 40 q-26 -4 -36 -40 q-14 -22 -4 -46z" fill="#7a5436" stroke="#3d2a16" stroke-width="3"/>
+    <g fill="#7a5436" stroke="#3d2a16" stroke-width="2"><circle cx="170" cy="208" r="7"/><circle cx="186" cy="202" r="6"/><circle cx="202" cy="200" r="6"/><circle cx="218" cy="203" r="6"/><circle cx="232" cy="209" r="6"/></g>
+    <text x="200" y="372" text-anchor="middle" font-weight="700">รอยเท้าคงรูป ขอบไม่ยุบตัว — ใช้ได้</text>
+    <text x="200" y="398" text-anchor="middle" font-size="15">พร้อมนำไปใส่ไม้แบบ</text>
+    <use href="#ok" x="300" y="200" width="48" height="48"/>
+  </g>
+  <line x1="400" y1="50" x2="400" y2="400" stroke="#bbb" stroke-dasharray="8 6"/>
+  <!-- RIGHT: too wet -->
+  <g>
+    <text x="600" y="70" text-anchor="middle" font-size="16">ดินเหลวเกินไป</text>
+    <path d="M565 90 q35 -18 70 0 q6 14 -6 22 q-30 8 -58 0 q-12 -8 -6 -22z" fill="#e3c9a8" stroke="#5a3b1c" stroke-width="2"/>
+    <line x1="600" y1="120" x2="600" y2="150" stroke="#333" stroke-width="3" marker-end="url(#arr)" transform="rotate(180 600 135)"/>
+    <rect x="460" y="190" width="280" height="150" fill="#a9825b" stroke="#5a3b1c" stroke-width="2"/>
+    <!-- slumped footprint: shallow, blurry, filling in -->
+    <path d="M555 236 q45 -18 90 0 q14 22 -6 42 q-16 20 -39 22 q-23 -2 -39 -22 q-20 -20 -6 -42z" fill="#8f6a47" stroke="#6b4b2c" stroke-width="2" stroke-dasharray="5 5" opacity="0.8"/>
+    <path d="M568 250 q32 -10 64 0 q8 14 -4 26 q-12 12 -28 13 q-16 -1 -28 -13 q-12 -12 -4 -26z" fill="#9b7452" stroke="none"/>
+    <g stroke="#6b4b2c" stroke-width="2" fill="none"><path d="M540 300 q20 10 40 0"/><path d="M620 300 q20 10 40 0"/></g>
+    <text x="600" y="372" text-anchor="middle" font-weight="700">เนื้อดินไหลกลบรอยเท้า — ยังใช้ไม่ได้</text>
+    <text x="600" y="398" text-anchor="middle" font-size="15">ต้องเพิ่มทราย/แกลบ</text>
+    <use href="#no" x="700" y="200" width="48" height="48"/>
+  </g>
+</svg>

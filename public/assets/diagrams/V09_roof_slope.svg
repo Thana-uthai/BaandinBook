@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420" role="img" aria-labelledby="t d" font-family="Sarabun, 'Noto Sans Thai', Tahoma, sans-serif" font-size="18">
+  <title id="t">V09 หลังคาทรงสูงช่วยระบายน้ำได้ดี</title>
+  <desc id="d">แผนภาพเปรียบเทียบองศาหลังคา: หลังคาทรงสูงความลาดชันมาก (ไม่ต่ำกว่า ๓๐ องศาโดยทั่วไป / อย่างน้อย ๔๕ องศาสำหรับหญ้าคา-จาก) น้ำระบายเร็ว (✓); หลังคาความลาดชันต่ำ น้ำระบายช้า เสี่ยงไหลย้อนและรั่วซึม (✗). ที่มา: ภาพลายเส้นต้นฉบับ PDF 059 / หนังสือหน้า ๑๑๔ · วาดใหม่ตามสเปก G3 · EDITORIAL (D008)</desc>
+  <defs>
+    <symbol id="ok" viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#2e7d32"/><polyline points="10,21 17,28 30,13" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="no" viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#c62828"/><path d="M12 12 L28 28 M28 12 L12 28" stroke="#fff" stroke-width="4.5" stroke-linecap="round"/></symbol>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#3b7dd8"/></marker>
+  </defs>
+  <rect width="800" height="420" fill="#fff"/>
+  <!-- rain -->
+  <g stroke="#9ec5ee" stroke-width="2"><g id="rain"><line x1="60" y1="20" x2="52" y2="44"/><line x1="120" y1="20" x2="112" y2="44"/><line x1="180" y1="20" x2="172" y2="44"/><line x1="240" y1="20" x2="232" y2="44"/><line x1="300" y1="20" x2="292" y2="44"/><line x1="360" y1="20" x2="352" y2="44"/></g><use href="#rain" x="400"/></g>
+  <!-- LEFT steep -->
+  <g>
+    <text x="200" y="80" text-anchor="middle" font-weight="700">หลังคาทรงสูง ลาดชันมาก</text>
+    <!-- roof: apex high -->
+    <path d="M60 250 L200 110 L340 250" fill="#b06a3a" stroke="#5a3b1c" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M60 250 L200 110 L340 250 L300 250 L200 150 L100 250 Z" fill="#c98a4c" stroke="none"/>
+    <!-- wall -->
+    <rect x="100" y="250" width="200" height="110" fill="#d9b38c" stroke="#5a3b1c" stroke-width="3"/>
+    <!-- angle marker -->
+    <path d="M100 250 A40 40 0 0 1 128 222" fill="none" stroke="#1d4ed8" stroke-width="2"/>
+    <text x="134" y="246" font-size="14" fill="#1d4ed8" font-weight="700">≥ ๓๐°</text>
+    <!-- water running fast off -->
+    <g stroke="#3b7dd8" stroke-width="3" fill="none" marker-end="url(#arr)"><path d="M210 125 L300 215"/><path d="M190 125 L100 215"/></g>
+    <g fill="#3b7dd8"><circle cx="330" cy="262" r="4"/><circle cx="345" cy="280" r="4"/><circle cx="70" cy="262" r="4"/><circle cx="55" cy="280" r="4"/></g>
+    <text x="200" y="330" text-anchor="middle" font-size="14">ทั่วไป ไม่ต่ำกว่า ๓๐ องศา</text>
+    <text x="200" y="350" text-anchor="middle" font-size="14">หญ้าคา/จาก อย่างน้อย ๔๕ องศา หรือมุงให้ถี่</text>
+    <text x="200" y="395" text-anchor="middle" font-weight="700">น้ำระบายเร็ว — ระบายน้ำดี</text>
+    <use href="#ok" x="330" y="150" width="48" height="48"/>
+  </g>
+  <line x1="400" y1="60" x2="400" y2="400" stroke="#bbb" stroke-dasharray="8 6"/>
+  <!-- RIGHT low -->
+  <g>
+    <text x="600" y="80" text-anchor="middle" font-weight="700">หลังคาลาดต่ำ</text>
+    <path d="M460 250 L600 215 L740 250" fill="#b06a3a" stroke="#5a3b1c" stroke-width="4" stroke-linejoin="round"/>
+    <rect x="500" y="250" width="200" height="110" fill="#d9b38c" stroke="#5a3b1c" stroke-width="3"/>
+    <!-- slow water, pooling and backflow into wall -->
+    <g stroke="#3b7dd8" stroke-width="3" fill="none" stroke-dasharray="6 6" marker-end="url(#arr)"><path d="M610 222 L690 240"/><path d="M590 222 L510 240"/></g>
+    <path d="M560 230 q40 -8 80 0 Z" fill="#3b7dd8" opacity="0.8"/>
+    <g stroke="#3b7dd8" stroke-width="2.5" fill="none" marker-end="url(#arr)"><path d="M600 236 L600 290"/></g>
+    <text x="600" y="330" text-anchor="middle" font-size="14" fill="#c62828">น้ำระบายช้า ไหลย้อน รั่วซึมลงผนัง</text>
+    <text x="600" y="395" text-anchor="middle" font-weight="700" fill="#c62828">เสี่ยงรั่วซึม</text>
+    <use href="#no" x="700" y="150" width="48" height="48"/>
+  </g>
+</svg>
