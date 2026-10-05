@@ -7,19 +7,22 @@ Authoritative data: `content/diagrams.json` (`status` per item, vocabulary in `_
 Source of the QA findings: `00_PROJECT_CONTROL/02_ACTIVE_PROMPTS/C5_VISUAL_QA_REPORT_AND_CLAUDE_CORRECTION_PROMPT`
 (ChatGPT, JOB-20261005-CLAUDECODE-07), which inspected the actual book scans against the C2 SVGs.
 
-| id | file | source | status (C5) |
+| id | file | source | status (after C5B final QA) |
 |---|---|---|---|
 | V01 | V01_orientation_sun_wind_rain.svg | PDF 031 / p.๕๙ | CHATGPT_SOURCE_VISUAL_QA_PASSED |
 | V04 | V04_adobe_drop_test.svg | PDF 042 / p.๘๑ | CHATGPT_SOURCE_VISUAL_QA_PASSED |
 | V06 | V06_soil_toughness.svg | PDF 044 / p.๘๔ | CHATGPT_SOURCE_VISUAL_QA_PASSED |
-| V07 | V07_lintels.svg | **PDF 055** / p.๑๐๗ (was wrongly PDF 056) | IMPLEMENTED_C5_CORRECTION_PENDING_CHATGPT_FINAL_VISUAL_QA |
+| V07 | V07_lintels.svg | **PDF 055** / p.๑๐๗ (was wrongly PDF 056) | CHATGPT_SOURCE_VISUAL_QA_PASSED (C5B final QA) |
 | V08 | V08_window_water.svg | PDF 057 / p.๑๑๐ | CHATGPT_SOURCE_VISUAL_QA_PASSED |
 | V09 | V09_roof_slope.svg | PDF 059 / p.๑๑๔ | CHATGPT_SOURCE_VISUAL_QA_PASSED |
 | V10 | V10_central_gutter.svg | PDF 059 / p.๑๑๕ (upper) | CHATGPT_SOURCE_VISUAL_QA_PASSED |
-| V11 | V11_roof_water_wall.svg | PDF 059 / p.๑๑๕ (lower right) | IMPLEMENTED_C5_CORRECTION_PENDING_CHATGPT_FINAL_VISUAL_QA |
+| V11 | V11_roof_water_wall.svg | PDF 059 / p.๑๑๕ (lower right) | CHATGPT_SOURCE_VISUAL_QA_PASSED (C5B final QA) |
 
-The six PASS drawings were not touched in C5. The retired C2 status
-`IMPLEMENTED_FROM_G3_SPEC_PENDING_CHATGPT_QA` no longer applies to any diagram.
+The six PASS drawings were not touched in C5/C5B. ChatGPT re-inspected the C5B drawings of V07 and V11
+against the scans and returned `C5B_FINAL_VISUAL_QA_PASSED`; the Owner approved merging PR #2 at head `c95b37c`.
+All 8 diagrams now hold `CHATGPT_SOURCE_VISUAL_QA_PASSED` (V07/V11 additionally carry `qa_confirmed_by`).
+The retired statuses `IMPLEMENTED_FROM_G3_SPEC_PENDING_CHATGPT_QA` (C2) and
+`IMPLEMENTED_C5_CORRECTION_PENDING_CHATGPT_FINAL_VISUAL_QA` (C5/C5B) no longer apply to any diagram.
 
 ## C5 corrections
 
