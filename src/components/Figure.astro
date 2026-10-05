@@ -1,7 +1,7 @@
 ---
 /**
  * Figure slot with caption / alt / provenance.
- * - needs_redraw + diagram implemented  → renders the G3 SVG with G3 caption/alt/provenance and QA status.
+ * - needs_redraw + diagram implemented  → renders the redrawn SVG with its manifest caption/alt/provenance and QA status.
  * - otherwise                            → visible placeholder keeping the original caption (no redraw from memory).
  */
 import type { Figure as Fig } from '@lib/content';
@@ -16,7 +16,7 @@ const diagrams = (figure.diagram_ids ?? []).map(diagramById).filter((d): d is No
     <figcaption>
       <strong>{d.id}</strong> {d.caption}
       <span class="prov">
-        ภาพวาดใหม่ตามสเปก G3 (Gemini) · {d.provenance} · ต้นแบบ: {d.source} · สัญลักษณ์: {d.semantics} · สถานะ: {d.status}
+        ภาพวาดใหม่จากต้นฉบับหนังสือ · {d.provenance} · ต้นแบบ: {d.source} · สัญลักษณ์: {d.semantics} · สถานะ: {d.status}
         {figure.caption_original && <> · คำบรรยายต้นฉบับ: “{figure.caption_original}”</>}
       </span>
     </figcaption>

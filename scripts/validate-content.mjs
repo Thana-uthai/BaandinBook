@@ -160,7 +160,9 @@ if (topics.length !== 26) err('content/web', `expected 26 P0 topics, found ${top
 
 // diagrams manifest
 const manifest = JSON.parse(readFileSync(join(ROOT, 'content', 'diagrams.json'), 'utf8'));
+const DIAGRAM_STATUS = new Set(Object.keys(manifest._status_vocab ?? {}));
 for (const d of manifest.diagrams) {
+  if (!DIAGRAM_STATUS.has(d.status)) err('content/diagrams.json', `${d.id}: status ${d.status} not in _status_vocab`);
   const file = join(ROOT, 'public', d.file);
   if (!existsSync(file)) { err('content/diagrams.json', `${d.id}: file ${d.file} missing`); continue; }
   const svg = readFileSync(file, 'utf8');
