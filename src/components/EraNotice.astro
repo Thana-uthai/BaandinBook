@@ -1,0 +1,26 @@
+---
+/**
+ * EraNotice (D005/D007). Renders the certified era_notice object as-is.
+ * `proposed` notices are shown but labelled as proposals awaiting ChatGPT confirmation —
+ * the certified text is never altered here.
+ */
+import type { EraNotice } from '@lib/content';
+import { BOOK } from '@lib/content';
+interface Props { notice: EraNotice; compact?: boolean }
+const { notice, compact = false } = Astro.props;
+const kinds = notice.kinds.join(', ');
+---
+<div class={`callout callout-era ${compact ? 'small' : ''}`} role="note" data-era-scope={notice.scope}>
+  <p class="callout-title">⏳ {BOOK.era_text}</p>
+  <p>
+    {notice.required && <strong>จำเป็นต้องแสดง: </strong>}
+    ข้อมูลประเภท <em>{kinds}</em> ในหน้านี้เป็นบริบทจากหนังสือ พ.ศ. {notice.year_be} ไม่ใช่ข้อมูลปัจจุบัน
+    {notice.claim_ids && notice.claim_ids.length > 0 && (
+      <span class="muted small"> (อ้างถึง: {notice.claim_ids.join(', ')})</span>
+    )}
+  </p>
+  {notice.note && <p class="small">{notice.note}</p>}
+  {notice.proposed && (
+    <p class="small"><strong>สถานะป้าย:</strong> ข้อเสนอจากผู้จัดทำเนื้อหา — รอ ChatGPT QA ยืนยันหรือปรับ{notice.decision_pending ? ' (ยังไม่ได้ตัดสิน)' : ''}</p>
+  )}
+</div>

@@ -1,0 +1,32 @@
+---
+/** Ordered steps (howto). Numbering follows the certified `n`; unnumbered groups use bullets. */
+import type { Claim } from '@lib/content';
+import { CLAIM_TYPE_LABEL, MODALITY_LABEL, modalityCodes } from '@lib/content';
+import SourceCite from './SourceCite.astro';
+interface Props { steps: Claim[]; numbered?: boolean; title?: string; refText?: string; expected?: number; headingLevel?: 'h2' | 'h3' }
+const { steps, numbered = true, title, refText, expected, headingLevel = 'h2' } = Astro.props;
+const H = headingLevel;
+---
+<section aria-label={title ?? 'ขั้นตอน'}>
+  {title && <H>{title} {refText && <small class="muted">— <SourceCite refText={refText} /></small>}</H>}
+  {expected !== undefined && expected !== steps.length && (
+    <p class="callout callout-caution small">จำนวนขั้นในหน้านี้ ({steps.length}) ไม่ตรงกับ master_step_count ({expected}) — ต้องส่งกลับ QA</p>
+  )}
+  <ol class={`steps ${numbered ? '' : 'unnumbered'}`}>
+    {steps.map((s) => {
+      const mods = modalityCodes(s.mod);
+      return (
+        <li>
+          {s.heading && <div class="claim-head">{s.heading}</div>}
+          <div>{s.text}</div>
+          <div class="claim-meta">
+            {s.type && <span class={`chip chip-type-${s.type}`} title={CLAIM_TYPE_LABEL[s.type].long}>{CLAIM_TYPE_LABEL[s.type].short}</span>}
+            {mods.map((m) => <span class={`chip chip-mod-${m}`} title={MODALITY_LABEL[m].long}>{MODALITY_LABEL[m].short}</span>)}
+            {s.verbatim && s.verbatim.length > 0 && <span class="chip">ตรงต้นฉบับ: {s.verbatim.join(' · ')}</span>}
+            <SourceCite refText={s.ref} />
+          </div>
+        </li>
+      );
+    })}
+  </ol>
+</section>

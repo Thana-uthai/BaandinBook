@@ -1,0 +1,36 @@
+---
+/** Technique comparison table (T12). Only the certified columns; no scoring/ranking columns may be added. */
+import type { Topic } from '@lib/content';
+import { urlForId } from '@lib/content';
+import SourceCite from './SourceCite.astro';
+interface Props { comparison: NonNullable<Topic['comparison']> }
+const { comparison } = Astro.props;
+---
+<section aria-label={comparison.title}>
+  <h2>{comparison.title}</h2>
+  {comparison.note && <p class="small muted">{comparison.note}</p>}
+  <div class="table-scroll">
+    <table>
+      <thead><tr>{comparison.columns.map((c) => <th scope="col">{c}</th>)}</tr></thead>
+      <tbody>
+        {comparison.rows.map((r) => {
+          const link = r.topic ? urlForId(r.topic) : undefined;
+          let wallBefore = r.wall, wallStrong = '', wallAfter = '';
+          if (r.wall_strong && r.wall.startsWith(r.wall_strong)) { wallStrong = r.wall_strong; wallBefore = ''; wallAfter = r.wall.slice(r.wall_strong.length); }
+          return (
+            <tr>
+              <th scope="row">
+                {link ? <a href={link}>{r.technique}</a> : r.technique}
+                {r.tag && <div><span class="badge" title="หนังสือกล่าวว่าทดลองสร้างในต่างประเทศ">{r.tag}</span></div>}
+              </th>
+              <td>{wallBefore}{wallStrong && <strong>{wallStrong}</strong>}{wallAfter}</td>
+              <td>{r.pros}</td>
+              <td>{r.cons}</td>
+              <td><SourceCite refText={r.ref} /></td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  </div>
+</section>

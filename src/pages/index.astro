@@ -1,0 +1,52 @@
+---
+import Base from '@layouts/Base.astro';
+import TopicCard from '@components/TopicCard.astro';
+import { allTopics, SECTIONS, SECTION_ORDER, sectionIndexTopic, topicsInSection, BOOK, DIAGRAMS } from '@lib/content';
+const topics = allTopics();
+const faq = topicsInSection('faq');
+const safetyCount = topics.reduce((n, t) => n + t.safety_cautions.length, 0);
+---
+<Base title="จากดินสู่บ้าน" description="คลังความรู้บ้านดินจากหนังสือ จากดินสู่บ้าน สร้างบ้านด้วยดิน (พ.ศ. 2548) — เริ่มต้น เลือกเทคนิค ค้นตามปัญหา" eraBar={false}>
+  <section class="hero">
+    <h1>สร้างบ้านด้วยดิน เริ่มจากความรู้ในหนังสือ</h1>
+    <p class="lede">เรียบเรียงจากหนังสือ “{BOOK.title}” ให้สั้น อ่านง่ายบนมือถือ และทุกข้อความชี้กลับไปยังหน้าหนังสือต้นฉบับ</p>
+    <p class="callout callout-era small"><strong>บริบทเวลา:</strong> {BOOK.era_text} — ราคา สถิติ ระยะเวลา และสภาพการณ์ที่กล่าวถึงเป็นของช่วงเวลานั้น</p>
+  </section>
+
+  <section aria-labelledby="ways">
+    <h2 id="ways">เริ่มต้นเร็ว 3 ทาง</h2>
+    <ul class="three-ways">
+      <li><a href="/start"><strong>เรียนตามลำดับ</strong>เส้นทางผู้เริ่มต้น ๘ ขั้น ตั้งแต่ตรวจบ้านเดิมจนถึงลงมือสร้างแบบเล็ก</a></li>
+      <li><a href="/problems"><strong>ค้นตามปัญหา</strong>แตกร้าว ปลวก ฝน น้ำท่วม หลังคารั่ว เวลาและเงินบานปลาย</a></li>
+      <li><a href="/techniques"><strong>เลือกเทคนิค</strong>อิฐดินดิบ ดินปั้น ดินอัด และตารางเปรียบเทียบตามที่หนังสือระบุ</a></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="sections">
+    <h2 id="sections">หมวดเนื้อหา</h2>
+    <ul class="cards">
+      {SECTION_ORDER.map((s) => {
+        const idx = sectionIndexTopic(s);
+        const n = topicsInSection(s).length + (idx ? 1 : 0);
+        return (
+          <li class="card">
+            <h3><a href={`/${s}`}>{SECTIONS[s].title}</a></h3>
+            <p class="small" style="margin:0">{SECTIONS[s].description}</p>
+            <div class="meta">{n} หน้า</div>
+          </li>
+        );
+      })}
+    </ul>
+  </section>
+
+  <section aria-labelledby="faqh">
+    <h2 id="faqh">คำถามยอดฮิต</h2>
+    <ul class="cards">{faq.map((t) => <TopicCard topic={t} />)}</ul>
+  </section>
+
+  <section aria-labelledby="about-h" class="read">
+    <h2 id="about-h">เนื้อหาในเว็บนี้มาจากไหน</h2>
+    <p>ทุกหน้าเป็น <span class="badge badge-editorial">EDITORIAL</span> คือสรุป/เรียบเรียงเพื่อช่วยอ่าน ไม่ใช่ข้อความต้นฉบับคำต่อคำ ตัวเลข ขนาด อัตราส่วน และข้อควรระวังคงตามหนังสือ และผ่านการตรวจเทียบต้นฉบับแล้ว (P0: 26 หัวข้อ · ข้อควรระวัง {safetyCount} รายการ · ภาพวาดใหม่ {DIAGRAMS.length} ชุด)</p>
+    <p><a href="/about">อ่านนโยบายเนื้อหาและความแตกต่างของ ORIGINAL / COMMUNITY / EDITORIAL</a> · <a href="/sources">ที่มาและเครดิต</a></p>
+  </section>
+</Base>

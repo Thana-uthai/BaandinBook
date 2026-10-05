@@ -1,0 +1,42 @@
+---
+/**
+ * Key points / generic claim list. Shows claim_type + modality chips (as certified)
+ * and the source cite for every claim, so each statement is traceable.
+ */
+import type { Claim } from '@lib/content';
+import { CLAIM_TYPE_LABEL, MODALITY_LABEL, modalityCodes } from '@lib/content';
+import SourceCite from './SourceCite.astro';
+interface Props { claims: Claim[]; showIds?: boolean; idPrefix?: string }
+const { claims, showIds = true, idPrefix = 'c' } = Astro.props;
+
+function renderText(c: Claim) {
+  if (c.strong_phrase && c.text.includes(c.strong_phrase)) {
+    const [before, after] = c.text.split(c.strong_phrase);
+    return { before, strong: c.strong_phrase, after };
+  }
+  return { before: c.text, strong: '', after: '' };
+}
+---
+<ul class="claim-list">
+  {claims.map((c) => {
+    const t = renderText(c);
+    const mods = modalityCodes(c.mod);
+    const anchor = c.id ? `${idPrefix}-${c.id}` : undefined;
+    return (
+      <li id={anchor} class={c.safety ? 'is-safety' : undefined}>
+        {c.heading && <div class="claim-head">{c.heading}</div>}
+        <div>
+          {c.strong ? <strong>{c.text}</strong> : (<>{t.before}{t.strong && <strong>{t.strong}</strong>}{t.after}</>)}
+        </div>
+        <div class="claim-meta">
+          {showIds && c.id && <span class="muted">{c.id}</span>}
+          {c.type && <span class={`chip chip-type-${c.type}`} title={CLAIM_TYPE_LABEL[c.type].long}>{CLAIM_TYPE_LABEL[c.type].short}</span>}
+          {mods.map((m) => <span class={`chip chip-mod-${m}`} title={MODALITY_LABEL[m].long}>{MODALITY_LABEL[m].short}</span>)}
+          {c.verbatim && c.verbatim.length > 0 && <span class="chip" title="ค่าที่ต้องตรงต้นฉบับ (verbatim)">ตรงต้นฉบับ: {c.verbatim.join(' · ')}</span>}
+          {c.era_kind && <span class="chip" title="ข้อมูลขึ้นกับเวลา (ดู EraNotice)">⏳ {c.era_kind}</span>}
+          <SourceCite refText={c.ref} />
+        </div>
+      </li>
+    );
+  })}
+</ul>

@@ -1,0 +1,15 @@
+---
+import Base from '@layouts/Base.astro';
+import TopicPage from '@components/TopicPage.astro';
+import { allTopics, type Topic } from '@lib/content';
+
+export function getStaticPaths() {
+  return allTopics()
+    .filter((t) => !t.section_index && t.slug !== '')
+    .map((t) => ({ params: { section: t.section, slug: t.slug }, props: { topic: t } }));
+}
+const { topic } = Astro.props as { topic: Topic };
+---
+<Base title={topic.title} description={topic.one_line_summary ?? topic.quick_answer} section={topic.section}>
+  <TopicPage topic={topic} />
+</Base>

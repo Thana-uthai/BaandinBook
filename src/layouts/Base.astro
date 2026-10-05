@@ -1,0 +1,83 @@
+---
+import '../styles/global.css';
+import { SECTIONS, SECTION_ORDER, BOOK } from '@lib/content';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** current section key, for aria-current in the nav */
+  section?: string;
+  /** when false the page-level EraNotice bar is not shown (home/about/search use their own copy) */
+  eraBar?: boolean;
+}
+
+const { title, description, section, eraBar = true } = Astro.props;
+const siteName = 'จากดินสู่บ้าน';
+const fullTitle = title === siteName ? siteName : `${title} · ${siteName}`;
+const path = Astro.url.pathname;
+---
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    {description && <meta name="description" content={description} />}
+    <meta name="color-scheme" content="light dark" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">ข้ามไปเนื้อหาหลัก</a>
+    <header class="site-header">
+      <div class="bar">
+        <a class="brand" href="/" aria-label="จากดินสู่บ้าน หน้าแรก">
+          <span class="mark" aria-hidden="true"></span>
+          <span>จากดินสู่บ้าน <small>คลังความรู้บ้านดินจากหนังสือ พ.ศ. 2548</small></span>
+        </a>
+        <details class="nav-toggle">
+          <summary aria-label="เปิดเมนู">เมนู</summary>
+          <nav class="site-nav" aria-label="เมนูหลัก">
+            <ul>
+              {SECTION_ORDER.map((s) => (
+                <li>
+                  <a href={`/${s}`} aria-current={section === s ? 'page' : undefined}>{SECTIONS[s].short}</a>
+                </li>
+              ))}
+              <li><a href="/search" aria-current={path === '/search' ? 'page' : undefined}>ค้นหา</a></li>
+            </ul>
+          </nav>
+        </details>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      {eraBar && (
+        <p class="callout callout-era small" role="note">
+          <strong>บริบทเวลา:</strong> {BOOK.era_text} — ราคา สถิติ ระยะเวลา ช่องทางติดต่อ และข้อความในหนังสืออ้างอิงช่วงเวลานั้น (PROJECT_DECISIONS D005/D007)
+        </p>
+      )}
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="inner">
+        <p><strong>{siteName}</strong> — คลังความรู้บ้านดินที่เรียบเรียงจากหนังสือ “{BOOK.title}” ({BOOK.era_text})</p>
+        <div class="legend" aria-label="ประเภทเนื้อหาสามแบบ (D006)">
+          <div><span class="badge badge-original">ORIGINAL BOOK KNOWLEDGE</span> เนื้อหาจากหนังสือ (อ่านต้นฉบับผ่านลิงก์ “อ่านต้นฉบับ” ในแต่ละหน้า — เฟสถัดไป)</div>
+          <div><span class="badge badge-editorial">EDITORIAL / AI SUMMARY</span> เนื้อหาที่ทีมงานและ AI เรียบเรียงเพื่อช่วยอ่าน ทุกข้อความชี้แหล่งกลับหนังสือ — <em>ทุกหน้าในเว็บไซต์นี้เป็นประเภทนี้</em></div>
+          <div><span class="badge badge-community">COMMUNITY KNOWLEDGE</span> เทคนิค/ประสบการณ์จากสมาชิก (ยังไม่เปิดในระยะนี้)</div>
+        </div>
+        <nav aria-label="ลิงก์ท้ายเว็บ">
+          <ul>
+            <li><a href="/about">เกี่ยวกับโครงการและนโยบายเนื้อหา</a></li>
+            <li><a href="/sources">ที่มาและเครดิต</a></li>
+            <li><a href="/diagrams">สถานะภาพประกอบ</a></li>
+            <li><a href="/search">ค้นหา</a></li>
+          </ul>
+        </nav>
+        <p class="muted small">ทำเนียบบ้านดินและข้อมูลเครือข่ายยังไม่เผยแพร่ในระยะนี้ (PROJECT_DECISIONS D002/D009)</p>
+      </div>
+    </footer>
+  </body>
+</html>

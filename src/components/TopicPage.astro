@@ -1,0 +1,160 @@
+---
+/**
+ * Composes a certified topic into a page. Block order is fixed so that every
+ * topic type reads the same way: header → era → summary → steps/items/comparison →
+ * key points → ratios → materials → SAFETY (never omitted) → problems → figures → provenance footer.
+ */
+import type { Topic } from '@lib/content';
+import { SECTIONS, topicById, topicUrl, BOOK } from '@lib/content';
+import Badges from './Badges.astro';
+import EraNotice from './EraNotice.astro';
+import ClaimList from './ClaimList.astro';
+import Steps from './Steps.astro';
+import Checklist from './Checklist.astro';
+import Ratios from './Ratios.astro';
+import Safety from './Safety.astro';
+import CommonProblems from './CommonProblems.astro';
+import Figure from './Figure.astro';
+import Comparison from './Comparison.astro';
+import IndexRows from './IndexRows.astro';
+import SourceCite from './SourceCite.astro';
+
+interface Props { topic: Topic }
+const { topic: t } = Astro.props;
+const section = SECTIONS[t.section];
+const related = t.related_topics.map((id) => ({ id, t: topicById(id) }));
+const stepTotal = (t.steps?.length ?? 0) + (t.step_groups?.reduce((n, g) => n + g.steps.length, 0) ?? 0);
+const figures = t.figures ?? [];
+---
+<article class="topic" data-topic-id={t.id} data-topic-type={t.topic_type} data-provenance={t.provenance} data-status={t.status}>
+  <nav class="breadcrumb" aria-label="ตำแหน่งหน้า">
+    <ol>
+      <li><a href="/">หน้าแรก</a></li>
+      <li>{t.section_index ? section.title : <a href={`/${t.section}`}>{section.title}</a>}</li>
+      {!t.section_index && <li aria-current="page">{t.title}</li>}
+    </ol>
+  </nav>
+
+  <header>
+    <h1>{t.question ?? t.title}</h1>
+    <Badges topic={t} />
+    {t.book_note && <p class="small muted">หมายเหตุหนังสือ: {t.book_note}</p>}
+    {t.chapter_note && <p class="small muted">{t.chapter_note}</p>}
+    {t.principle && <p class="callout callout-editorial small"><strong>หลักการ:</strong> {t.principle}</p>}
+    {t.no_new_facts && <p class="callout callout-editorial small">หน้านี้เป็นหน้านำทางที่จัดโดยทีมงาน ไม่มีข้อเท็จจริงใหม่ — ทุกข้อความอ้างแหล่งผ่านหัวข้อปลายทาง</p>}
+  </header>
+
+  {t.era_notice && <EraNotice notice={t.era_notice} />}
+
+  {t.symptom && <p class="lede"><strong>อาการ:</strong> {t.symptom}</p>}
+  {t.one_line_summary && !t.quick_answer && <p class="lede">{t.one_line_summary}</p>}
+  {t.quick_answer && (
+    <section aria-label="คำตอบสั้น">
+      <h2>คำตอบสั้น</h2>
+      <p class="lede">{t.quick_answer}</p>
+      {t.quick_answer_era && <p class="small muted">⏳ ข้อความข้างต้นเป็นบริบทจากหนังสือ พ.ศ. {BOOK.year_be} (ดู EraNotice ด้านบน)</p>}
+      {t.one_line_summary && <p class="small muted">สรุปหนึ่งบรรทัด: {t.one_line_summary}</p>}
+    </section>
+  )}
+
+  {t.index_rows && t.index_rows.length > 0 && (
+    <section aria-label="ลำดับ/ดัชนี">
+      <h2>{t.topic_id === 'T05' ? 'เดินตามลำดับ ๘ ขั้น' : 'เลือกอาการ แล้วไปอ่านหัวข้อที่มีข้อความรองรับ'}</h2>
+      <IndexRows rows={t.index_rows} variant={t.topic_id === 'T05' ? 'path' : 'table'} />
+    </section>
+  )}
+
+  {t.comparison && <Comparison comparison={t.comparison} />}
+
+  {t.steps && t.steps.length > 0 && (
+    <Steps steps={t.steps} title={t.steps_title ? `ขั้นตอน (${t.steps_title})` : 'ขั้นตอน'} refText={t.steps_ref} expected={t.step_groups ? undefined : t.master_step_count} />
+  )}
+  {t.step_groups && t.step_groups.length > 0 && (
+    <section aria-label="ขั้นตอน">
+      <h2>ขั้นตอน{t.master_step_count ? <small class="muted"> (master_step_count = {t.master_step_count}{t.master_step_note ? `: ${t.master_step_note}` : ''})</small> : null}</h2>
+      {t.master_step_count !== undefined && stepTotal !== t.master_step_count && t.step_groups.every((g) => g.numbered !== false) && (
+        <p class="callout callout-caution small">จำนวนขั้นรวม ({stepTotal}) ไม่ตรง master_step_count ({t.master_step_count}) — ต้องส่งกลับ QA</p>
+      )}
+      {t.step_groups.map((g) => <Steps steps={g.steps} numbered={g.numbered !== false} title={g.title} refText={g.ref} headingLevel="h3" />)}
+    </section>
+  )}
+
+  {t.items && t.items.length > 0 && <Checklist items={t.items} title={t.items_title} idPrefix={t.topic_id} />}
+
+  {t.extra_blocks?.map((b) => (
+    <section aria-label={b.title}>
+      <h2>{b.title} {b.ref && <small class="muted">— <SourceCite refText={b.ref} /></small>}</h2>
+      {b.text && <p>{b.text}</p>}
+      {b.list && <ul>{b.list.map((x) => <li>{x}</li>)}</ul>}
+    </section>
+  ))}
+
+  {t.key_points.length > 0 && (
+    <section aria-label="ประเด็นสำคัญ">
+      <h2>{t.key_points_title ?? 'ประเด็นสำคัญ'}</h2>
+      <ClaimList claims={t.key_points} idPrefix={t.topic_id} />
+    </section>
+  )}
+
+  {t.ratios_dimensions && t.ratios_dimensions.length > 0 && (
+    <Ratios items={t.ratios_dimensions} title={t.ratios_title ? `อัตราส่วนและขนาด — ${t.ratios_title}` : undefined} note={t.ratios_note} />
+  )}
+
+  {t.materials_tools && t.materials_tools.length > 0 && (
+    <section aria-label="วัสดุและเครื่องมือ">
+      <h2>{t.materials_title ?? 'วัสดุและเครื่องมือ (ตามหนังสือ)'}</h2>
+      {(() => {
+        const groups = new Map<string, typeof t.materials_tools>();
+        for (const m of t.materials_tools!) { const g = m.group ?? ''; if (!groups.has(g)) groups.set(g, []); groups.get(g)!.push(m); }
+        return [...groups.entries()].map(([g, items]) => (
+          <div>
+            {g && <h3>{g}</h3>}
+            <ul>{items!.map((m) => <li>{m.text} <SourceCite refText={m.ref} /></li>)}</ul>
+          </div>
+        ));
+      })()}
+      {t.materials_note && <p class="small muted">{t.materials_note}</p>}
+    </section>
+  )}
+  {(!t.materials_tools || t.materials_tools.length === 0) && t.materials_note && <p class="small muted">วัสดุ/เครื่องมือ: {t.materials_note}</p>}
+
+  <Safety cautions={t.safety_cautions} title={t.safety_title ? `ข้อควรระวัง — ${t.safety_title}` : undefined} note={t.safety_note} />
+
+  {t.common_problems.length > 0 && (
+    <CommonProblems problems={t.common_problems} title={t.common_problems_title ? (t.topic_id === 'T21' ? 'ดัชนีแตกร้าว: ' + t.common_problems_title : `ปัญหาที่พบบ่อย — ${t.common_problems_title}`) : undefined} note={t.common_problems_note} symptomLabel={t.topic_id === 'T21' ? 'บริบท' : 'อาการ'} />
+  )}
+
+  {figures.length > 0 && (
+    <section aria-label="ภาพประกอบ">
+      <h2>ภาพประกอบ</h2>
+      {figures.map((f) => <Figure figure={f} />)}
+    </section>
+  )}
+
+  {t.presentation_cautions && t.presentation_cautions.length > 0 && (
+    <div class="callout callout-editorial small">
+      <p class="callout-title">ข้อควรระวังในการนำเสนอ (กติกาของหน้านี้)</p>
+      <ul>{t.presentation_cautions.map((x) => <li>{x}</li>)}</ul>
+    </div>
+  )}
+
+  <footer class="topic-footer">
+    <h2>ที่มาและการตรวจสอบ</h2>
+    <dl>
+      <dt>ประเภทเนื้อหา</dt><dd><span class="badge badge-editorial">EDITORIAL</span> เรียบเรียงจากหนังสือ “{BOOK.title}” ({BOOK.era_text}) — ไม่ใช่ข้อความต้นฉบับคำต่อคำ</dd>
+      <dt>แหล่งในหนังสือ</dt><dd>{t.source_range}{t.source_refs.length > 0 && <> · {t.source_refs.join(' · ')}</>}{t.ref_precision && <> · ความละเอียด: {t.ref_precision}</>}</dd>
+      <dt>MASTER</dt><dd>{t.master_refs.join(' · ')} · master_qa: {t.master_qa}</dd>
+      <dt>ไฟล์ Web Content</dt><dd>{t.source_file}{t.source_file_note && <> — {t.source_file_note}</>} · ชุดต้นฉบับ {t.source_set}</dd>
+      {t.read_original.length > 0 && <><dt>อ่านต้นฉบับ</dt><dd>{t.read_original.map((r) => <code>{r}</code>)} <span class="muted">(ลิงก์ไปหน้า /book จะเปิดในเฟสถัดไป)</span></dd></>}
+      {related.length > 0 && <><dt>หัวข้อที่เกี่ยวข้อง</dt><dd><ul style="margin:0">{related.map(({ id, t: rt }) => <li>{rt ? <a href={topicUrl(rt)}>{rt.title}</a> : <span class="muted">{id}</span>}</li>)}</ul></dd></>}
+      {t.qa_closure && <><dt>QA closure</dt><dd>{t.qa_closure}</dd></>}
+    </dl>
+    {t.editorial_notes && t.editorial_notes.length > 0 && (
+      <details class="notes">
+        <summary>หมายเหตุของผู้จัดทำ / สถานะการตรวจ ({t.editorial_notes.length})</summary>
+        <ul>{t.editorial_notes.map((n) => <li class="small">{n}</li>)}</ul>
+      </details>
+    )}
+    <p class="small muted">พบข้อผิดพลาด? การแก้ตัวเลข ข้อควรระวัง แหล่ง หรือ EraNotice ต้องผ่าน ChatGPT QA (CONTENT_CHANGE_REQUEST) ก่อนเผยแพร่ — ดู <a href="/about">นโยบายเนื้อหา</a></p>
+  </footer>
+</article>

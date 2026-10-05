@@ -1,0 +1,15 @@
+---
+import type { Topic } from '@lib/content';
+import { topicUrl, TOPIC_TYPE_LABEL, SECTIONS } from '@lib/content';
+interface Props { topic: Topic; showSection?: boolean }
+const { topic, showSection = false } = Astro.props;
+---
+<li class={`card ${topic.section_index ? 'index' : ''}`}>
+  <h3><a href={topicUrl(topic)}>{topic.title}</a></h3>
+  {topic.one_line_summary && <p class="small" style="margin:0">{topic.one_line_summary}</p>}
+  <div class="meta">
+    <span class="badge badge-editorial">EDITORIAL</span> {TOPIC_TYPE_LABEL[topic.topic_type]} · {topic.topic_id}
+    {showSection && <> · {SECTIONS[topic.section].title}</>}
+    {topic.safety_cautions.length > 0 && <> · ⚠️ {topic.safety_cautions.length} ข้อควรระวัง</>}
+  </div>
+</li>

@@ -1,0 +1,9 @@
+---
+import Base from '@layouts/Base.astro';
+import { SECTIONS, SECTION_ORDER } from '@lib/content';
+---
+<Base title="ไม่พบหน้า" eraBar={false}>
+  <h1>ไม่พบหน้าที่ต้องการ</h1>
+  <p class="lede">ลองเริ่มจากหมวดด้านล่าง หรือ <a href="/search">ค้นหา</a></p>
+  <ul>{SECTION_ORDER.map((s) => <li><a href={`/${s}`}>{SECTIONS[s].title}</a></li>)}</ul>
+</Base>

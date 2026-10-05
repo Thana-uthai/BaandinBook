@@ -1,0 +1,6 @@
+---
+/** Inline source reference, exactly as certified (e.g. "PDF 73R (๑๔๓)"). */
+interface Props { refText?: string; prefix?: string }
+const { refText, prefix = 'แหล่ง' } = Astro.props;
+---
+{refText && <cite class="src" title={`${prefix}ในหนังสือ (หน้า PDF ↔ หนังสือหน้า (2N−4) ซ้าย / (2N−3) ขวา)`}>{refText}</cite>}

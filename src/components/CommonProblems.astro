@@ -1,0 +1,33 @@
+---
+/** "อาการ → สิ่งที่หนังสือบอก" table. Only problems the book supports; no external fixes. */
+import type { CommonProblem } from '@lib/content';
+import { urlForId, topicById } from '@lib/content';
+import SourceCite from './SourceCite.astro';
+interface Props { problems: CommonProblem[]; title?: string; note?: string; symptomLabel?: string }
+const { problems, title = 'ปัญหาที่พบบ่อย (เฉพาะที่หนังสือระบุ)', note, symptomLabel = 'อาการ' } = Astro.props;
+---
+<section aria-label={title}>
+  <h2>{title}</h2>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th scope="col">{symptomLabel}</th><th scope="col">สิ่งที่หนังสือบอก</th><th scope="col">แหล่ง</th></tr></thead>
+      <tbody>
+        {problems.map((p) => {
+          const link = p.topic ? urlForId(p.topic) : undefined;
+          const t = p.topic ? topicById(p.topic) : undefined;
+          return (
+            <tr>
+              <th scope="row">{p.symptom}</th>
+              <td>{p.what_book_says}</td>
+              <td>
+                <SourceCite refText={p.ref} />
+                {link && t && <div class="small"><a href={link}>→ {t.title}</a></div>}
+              </td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  </div>
+  {note && <p class="small muted">{note}</p>}
+</section>

@@ -1,0 +1,14 @@
+---
+/** Provenance / status badges for a topic header (D006 visibility). */
+import type { Topic } from '@lib/content';
+import { STATUS_LABEL, TOPIC_TYPE_LABEL } from '@lib/content';
+interface Props { topic: Topic }
+const { topic } = Astro.props;
+---
+<div class="badges" aria-label="ป้ายกำกับเนื้อหา">
+  <span class="badge badge-editorial" title="EDITORIAL / AI SUMMARY — เนื้อหาเรียบเรียงจากหนังสือ ชี้แหล่งกลับต้นฉบับ (D006)">EDITORIAL</span>
+  <span class="badge" title="ชนิดหน้า">{TOPIC_TYPE_LABEL[topic.topic_type]}{topic.topic_type_note ? ` · ${topic.topic_type_note}` : ''}</span>
+  <span class="badge badge-status" title={`สถานะเนื้อหา: ${STATUS_LABEL[topic.status]} · master_qa=${topic.master_qa}`}>{topic.status === 'QA_PASSED' ? 'QA_PASSED' : 'AI_DRAFT · WEB_QA_PASSED (P0)'}</span>
+  {topic.editorial_label && <span class="badge badge-editorial" title="ส่วนที่จัดโดยทีมงาน">{topic.editorial_label}</span>}
+  <span class="badge" title="รหัสหัวข้อใน WEB_CONTENT_P0_MANIFEST">{topic.topic_id}</span>
+</div>

@@ -1,0 +1,39 @@
+---
+/** Navigation index rows (T05 path, T20 problems index). Links only; no new facts. */
+import type { IndexRow } from '@lib/content';
+import { topicById, topicUrl } from '@lib/content';
+interface Props { rows: IndexRow[]; variant: 'path' | 'table'; title?: string }
+const { rows, variant, title } = Astro.props;
+---
+{variant === 'path' ? (
+  <ol class="path" aria-label={title ?? 'เส้นทาง'}>
+    {rows.map((r) => (
+      <li>
+        <div class="label">{r.label}</div>
+        {r.lead && <div>{r.lead}</div>}
+        <div class="targets">
+          {r.targets.map((id) => { const t = topicById(id); return t ? <a href={topicUrl(t)}>{t.title}</a> : <span class="muted">{id}</span>; })}
+        </div>
+      </li>
+    ))}
+  </ol>
+) : (
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th scope="col">อาการ/คำถาม</th><th scope="col">ไปที่ (หัวข้อที่มี source)</th></tr></thead>
+      <tbody>
+        {rows.map((r) => (
+          <tr>
+            <th scope="row">{r.label}</th>
+            <td>
+              <ul style="margin:0;padding-left:1.1em">
+                {r.targets.map((id) => { const t = topicById(id); return <li>{t ? <a href={topicUrl(t)}>{t.title}</a> : <span class="muted">{id}</span>}</li>; })}
+              </ul>
+              {r.lead && <div class="small muted">{r.lead}</div>}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+)}

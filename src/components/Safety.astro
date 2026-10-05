@@ -1,0 +1,37 @@
+---
+/**
+ * Safety / caution block. Always rendered prominently (never collapsed, never minimised).
+ * FORBIDDEN (F) cautions get the strongest treatment.
+ */
+import type { Claim } from '@lib/content';
+import { MODALITY_LABEL, modalityCodes } from '@lib/content';
+import SourceCite from './SourceCite.astro';
+interface Props { cautions: Claim[]; title?: string; note?: string }
+const { cautions, title = 'ข้อควรระวัง (ตามหนังสือ)', note } = Astro.props;
+---
+<section class="safety-block" aria-labelledby="safety-heading">
+  <h2 id="safety-heading">⚠️ {title}</h2>
+  {cautions.length > 0 ? (
+    <ol>
+      {cautions.map((c) => {
+        const mods = modalityCodes(c.mod);
+        const forbidden = mods.includes('F');
+        return (
+          <li id={c.id ? `s-${c.id}` : undefined} class={forbidden ? 'forbidden' : undefined}>
+            {c.strong || forbidden ? <strong>{c.text}</strong> : c.text}
+            <div class="claim-meta">
+              {mods.map((m) => <span class={`chip chip-mod-${m}`} title={MODALITY_LABEL[m].long}>{MODALITY_LABEL[m].short}</span>)}
+              {c.verbatim && c.verbatim.length > 0 && <span class="chip">ตรงต้นฉบับ: {c.verbatim.join(' · ')}</span>}
+              {c.from_item !== undefined && <span class="chip">จากรายการข้อ {c.from_item}</span>}
+              {c.from_claim && <span class="chip">จาก {c.from_claim}</span>}
+              <SourceCite refText={c.ref} />
+            </div>
+          </li>
+        );
+      })}
+    </ol>
+  ) : (
+    <p>{note ?? 'หัวข้อนี้ไม่มีข้อควรระวังเชิงปฏิบัติที่หนังสือระบุ'}</p>
+  )}
+  {cautions.length > 0 && note && <p class="small">{note}</p>}
+</section>

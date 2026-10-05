@@ -1,0 +1,40 @@
+---
+/**
+ * Checklist items (topic_type=checklist). Tick boxes are a reading aid only;
+ * they are not persisted and change no content. Items keep their certified order/numbers.
+ */
+import type { Claim } from '@lib/content';
+import { CLAIM_TYPE_LABEL, MODALITY_LABEL, modalityCodes } from '@lib/content';
+import SourceCite from './SourceCite.astro';
+interface Props { items: Claim[]; title?: string; idPrefix: string }
+const { items, title, idPrefix } = Astro.props;
+---
+<section aria-label={title ?? 'รายการตรวจ'}>
+  {title && <h2>{title}</h2>}
+  <ul class="checklist">
+    {items.map((it, i) => {
+      const id = `${idPrefix}-item-${it.n ?? i + 1}`;
+      const mods = modalityCodes(it.mod);
+      let before = it.text, strong = '', after = '';
+      if (it.strong_phrase && it.text.includes(it.strong_phrase)) {
+        [before, after] = it.text.split(it.strong_phrase);
+        strong = it.strong_phrase;
+      }
+      return (
+        <li class={it.safety ? 'is-safety' : undefined}>
+          <input type="checkbox" id={id} aria-describedby={`${id}-meta`} />
+          <div>
+            <label for={id}>{it.n !== undefined && <strong>{it.n}. </strong>}{before}{strong && <strong>{strong}</strong>}{after}</label>
+            <div class="claim-meta" id={`${id}-meta`}>
+              {it.type && <span class={`chip chip-type-${it.type}`} title={CLAIM_TYPE_LABEL[it.type].long}>{CLAIM_TYPE_LABEL[it.type].short}</span>}
+              {mods.map((m) => <span class={`chip chip-mod-${m}`} title={MODALITY_LABEL[m].long}>{MODALITY_LABEL[m].short}</span>)}
+              {it.verbatim && it.verbatim.length > 0 && <span class="chip">ตรงต้นฉบับ: {it.verbatim.join(' · ')}</span>}
+              {it.safety && <span class="chip chip-type-C">อยู่ในข้อควรระวังด้วย</span>}
+              <SourceCite refText={it.ref} />
+            </div>
+          </div>
+        </li>
+      );
+    })}
+  </ul>
+</section>

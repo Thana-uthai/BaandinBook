@@ -1,0 +1,115 @@
+---
+import Base from '@layouts/Base.astro';
+import TopicCard from '@components/TopicCard.astro';
+import { allTopics, SECTIONS, SECTION_ORDER, TOPIC_TYPE_LABEL } from '@lib/content';
+const topics = allTopics();
+const types = Object.entries(TOPIC_TYPE_LABEL).filter(([k]) => topics.some((t) => t.topic_type === k));
+---
+<Base title="ค้นหา" description="ค้นหาหัวข้อบ้านดินทั้งเว็บ พร้อมตัวกรองหมวดและประเภทหน้า" eraBar={false}>
+  <h1>ค้นหา</h1>
+  <p class="lede">พิมพ์คำที่ต้องการ (เช่น แตกร้าว, ปลวก, อัตราส่วน, ๒๐ เซนติเมตร) แล้วกรองตามหมวดหรือประเภทหน้า การค้นหาทำงานในเครื่องของคุณ ไม่ส่งข้อมูลออกไปที่ใด</p>
+  <form class="search-form" role="search" id="search-form" action="/search" method="get">
+    <label for="q"><strong>คำค้น</strong></label>
+    <input type="search" id="q" name="q" placeholder="เช่น ปลวก หลังคา ๓๐ องศา" autocomplete="off" />
+    <fieldset class="filters">
+      <legend class="small"><strong>หมวด</strong></legend>
+      {SECTION_ORDER.map((s) => <label><input type="checkbox" name="section" value={s} checked /> {SECTIONS[s].title}</label>)}
+    </fieldset>
+    <fieldset class="filters">
+      <legend class="small"><strong>ประเภทหน้า</strong></legend>
+      {types.map(([k, label]) => <label><input type="checkbox" name="type" value={k} checked /> {label}</label>)}
+    </fieldset>
+    <div class="filters">
+      <label><input type="checkbox" name="safety" value="1" /> เฉพาะหน้าที่มีข้อควรระวัง</label>
+      <label><input type="checkbox" name="era" value="1" /> เฉพาะหน้าที่มี EraNotice</label>
+      <button type="submit">ค้นหา</button>
+    </div>
+  </form>
+
+  <div id="status" role="status" aria-live="polite" class="small muted"></div>
+  <ol id="results" class="results" aria-label="ผลการค้นหา"></ol>
+
+  <noscript>
+    <p class="callout callout-note">เบราว์เซอร์ไม่ได้เปิด JavaScript — ด้านล่างคือรายการหัวข้อทั้งหมด (เรียงตามรหัส) เพื่อให้เลือกอ่านได้</p>
+  </noscript>
+  <section id="all-topics" aria-labelledby="all-h">
+    <h2 id="all-h">หัวข้อทั้งหมด ({topics.length})</h2>
+    <ul class="cards">{topics.map((t) => <TopicCard topic={t} showSection />)}</ul>
+  </section>
+
+  <script>
+    // Client-side search over the static index. Thai-aware tokenisation via Intl.Segmenter when available
+    // (C1_01 §4), substring fallback otherwise. No external dependency.
+    type Item = { id: string; topic_id: string; url: string; title: string; section: string; section_title: string; type: string; type_label: string; summary: string; has_safety: boolean; has_era: boolean; text: string };
+    const form = document.getElementById('search-form') as HTMLFormElement;
+    const input = document.getElementById('q') as HTMLInputElement;
+    const results = document.getElementById('results') as HTMLOListElement;
+    const status = document.getElementById('status') as HTMLDivElement;
+    const all = document.getElementById('all-topics') as HTMLElement;
+    let items: Item[] = [];
+    const seg = typeof Intl !== 'undefined' && 'Segmenter' in Intl ? new (Intl as any).Segmenter('th', { granularity: 'word' }) : null;
+
+    const norm = (s: string) => s.normalize('NFC').toLowerCase().replace(/[๐-๙]/g, (d) => String(d.charCodeAt(0) - 0x0e50));
+    function tokens(q: string): string[] {
+      const n = norm(q).trim();
+      if (!n) return [];
+      const out = new Set<string>();
+      for (const part of n.split(/\s+/)) {
+        out.add(part);
+        if (seg) for (const s of seg.segment(part)) if (s.isWordLike && s.segment.length > 1) out.add(s.segment);
+      }
+      return [...out];
+    }
+    function escapeHtml(s: string) { return s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c] as string)); }
+    function snippet(text: string, toks: string[]): string {
+      const n = norm(text);
+      let idx = -1;
+      for (const t of toks) { const i = n.indexOf(t); if (i >= 0 && (idx < 0 || i < idx)) idx = i; }
+      const start = Math.max(0, idx - 60);
+      let s = text.slice(start, start + 180);
+      s = escapeHtml(s);
+      for (const t of toks) if (t.length > 1) s = s.replace(new RegExp(t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), (m) => `<mark>${m}</mark>`);
+      return (start > 0 ? '…' : '') + s + '…';
+    }
+    function run() {
+      const fd = new FormData(form);
+      const q = (fd.get('q') as string) || '';
+      const sections = new Set(fd.getAll('section') as string[]);
+      const types = new Set(fd.getAll('type') as string[]);
+      const onlySafety = fd.get('safety') === '1';
+      const onlyEra = fd.get('era') === '1';
+      const toks = tokens(q);
+      const scored = items
+        .filter((it) => sections.has(it.section) && types.has(it.type) && (!onlySafety || it.has_safety) && (!onlyEra || it.has_era))
+        .map((it) => {
+          if (toks.length === 0) return { it, score: 1 };
+          const title = norm(it.title), text = norm(it.text), summary = norm(it.summary);
+          let score = 0;
+          for (const t of toks) {
+            if (title.includes(t)) score += 10;
+            if (summary.includes(t)) score += 4;
+            const c = text.split(t).length - 1; score += Math.min(c, 8);
+          }
+          return { it, score };
+        })
+        .filter((r) => r.score > 0)
+        .sort((a, b) => b.score - a.score || a.it.topic_id.localeCompare(b.it.topic_id));
+      results.innerHTML = scored.map(({ it }) => `
+        <li>
+          <a href="${it.url}"><strong>${escapeHtml(it.title)}</strong></a>
+          <div class="small muted">${escapeHtml(it.section_title)} · ${escapeHtml(it.type_label)} · ${it.topic_id}${it.has_safety ? ' · ⚠️ มีข้อควรระวัง' : ''}${it.has_era ? ' · ⏳ EraNotice' : ''}</div>
+          <div class="small">${toks.length ? snippet(it.text, toks) : escapeHtml(it.summary)}</div>
+        </li>`).join('');
+      status.textContent = toks.length ? `พบ ${scored.length} หน้า สำหรับ “${q}”` : `แสดง ${scored.length} หน้า (ยังไม่ได้พิมพ์คำค้น)`;
+      all.hidden = toks.length > 0 || scored.length !== items.length;
+    }
+    fetch('/search-index.json').then((r) => r.json()).then((d) => {
+      items = d.items;
+      const url = new URL(location.href);
+      const q = url.searchParams.get('q'); if (q) input.value = q;
+      run();
+    }).catch(() => { status.textContent = 'โหลดดัชนีค้นหาไม่สำเร็จ — ใช้รายการหัวข้อทั้งหมดด้านล่างแทน'; });
+    form.addEventListener('submit', (e) => { e.preventDefault(); run(); history.replaceState(null, '', input.value ? `?q=${encodeURIComponent(input.value)}` : location.pathname); });
+    form.addEventListener('input', () => run());
+  </script>
+</Base>

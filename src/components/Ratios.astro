@@ -1,0 +1,29 @@
+---
+/** Ratios / dimensions table. value_text is shown verbatim — never converted or recomputed. */
+import type { Quantity } from '@lib/content';
+import SourceCite from './SourceCite.astro';
+interface Props { items: Quantity[]; title?: string; note?: string }
+const { items, title = 'อัตราส่วนและขนาด (ตามต้นฉบับ)', note } = Astro.props;
+const hasContext = items.some((q) => q.context);
+---
+<section aria-label="อัตราส่วนและขนาด">
+  <h2>{title}</h2>
+  <div class="table-scroll">
+    <table class="ratios">
+      <thead>
+        <tr><th scope="col">รายการ</th><th scope="col">ค่าตามหนังสือ</th>{hasContext && <th scope="col">บริบท</th>}<th scope="col">แหล่ง</th></tr>
+      </thead>
+      <tbody>
+        {items.map((q) => (
+          <tr id={q.id ? `q-${q.id}` : undefined}>
+            <th scope="row">{q.label}</th>
+            <td><span class="value">{q.value_text}</span>{q.era_kind && <span class="chip" title="ข้อมูลขึ้นกับเวลา (ดู EraNotice)"> ⏳ {q.era_kind}</span>}</td>
+            {hasContext && <td>{q.context ?? ''}</td>}
+            <td><SourceCite refText={q.ref} /></td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  {note && <p class="small muted">{note}</p>}
+</section>

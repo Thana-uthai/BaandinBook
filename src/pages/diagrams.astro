@@ -1,0 +1,31 @@
+---
+import Base from '@layouts/Base.astro';
+import { DIAGRAMS, allTopics, topicById, topicUrl } from '@lib/content';
+const placeholders = allTopics().flatMap((t) => (t.figures ?? []).filter((f) => !(f.diagram_ids?.length)).map((f) => ({ t, f })));
+---
+<Base title="สถานะภาพประกอบ" description="ภาพวาดใหม่ตามสเปก G3 (✓/✗) และช่องภาพที่รอ asset จากโครงการ" eraBar={false}>
+  <nav class="breadcrumb" aria-label="ตำแหน่งหน้า"><ol><li><a href="/">หน้าแรก</a></li><li aria-current="page">สถานะภาพประกอบ</li></ol></nav>
+  <h1>สถานะภาพประกอบ</h1>
+  <p class="lede read">ภาพลายเส้นในหนังสือบางภาพมีสัญลักษณ์ที่ OCR เพี้ยน (ตัวเลข 4 และ 8 แทนเครื่องหมาย ✓ และ ✗) จึงวาดใหม่ตามสเปกที่ตรวจเทียบสแกนแล้ว (Gemini G3) โดยแสดง <span class="check-ok">✓</span> / <span class="check-no">✗</span> ตามความหมายที่ยืนยัน และไม่แสดงเลข 4/8 เป็นป้ายความหมาย ภาพทั้งหมดเป็น <span class="badge badge-editorial">EDITORIAL (D008)</span> ระบุต้นแบบในหนังสือไว้ทุกภาพ</p>
+
+  <h2>ภาพวาดใหม่ตามสเปก G3 ({DIAGRAMS.length})</h2>
+  {DIAGRAMS.map((d) => (
+    <figure class="figure" id={d.id}>
+      <img src={d.file} alt={d.alt} width={d.width} height={d.height} loading="lazy" decoding="async" />
+      <figcaption>
+        <strong>{d.id}</strong> — {d.title}<br />{d.caption}
+        <span class="prov">ต้นแบบ: {d.source} · ไฟล์อ้างอิง: {d.ref_image} · สัญลักษณ์: {d.semantics} · {d.provenance} · สถานะ: {d.status}</span>
+        <span class="prov">ใช้ในหน้า: {d.topics.length ? d.topics.map((id) => { const t = topicById(id); return t ? <a href={topicUrl(t)}>{t.title}</a> : id; }).reduce<any[]>((acc, x, i) => (i ? [...acc, ' · ', x] : [x]), []) : (d as any).topic_note ?? 'ยังไม่มีหน้า P0 ที่อ้างถึง'}</span>
+      </figcaption>
+    </figure>
+  ))}
+
+  <h2>ช่องภาพที่รอ asset จากโครงการ ({placeholders.length})</h2>
+  <p class="small muted">ภาพจากหนังสือที่ไม่ต้องวาดใหม่ (ไม่มีสัญลักษณ์ ✓/✗) แสดงเป็นช่องว่างพร้อมคำบรรยายตามต้นฉบับ จนกว่าจะได้ไฟล์ภาพจาก 04_ภาพประกอบ</p>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th scope="col">หน้า</th><th scope="col">แหล่ง</th><th scope="col">คำบรรยายตามต้นฉบับ</th><th scope="col">หมายเหตุ</th></tr></thead>
+      <tbody>{placeholders.map(({ t, f }) => <tr><td><a href={topicUrl(t)}>{t.topic_id} {t.title}</a></td><td>{f.ref}</td><td>{f.caption_original ?? '—'}</td><td class="small">{f.note ?? ''}</td></tr>)}</tbody>
+    </table>
+  </div>
+</Base>

@@ -1,0 +1,37 @@
+---
+/**
+ * Figure slot with caption / alt / provenance.
+ * - needs_redraw + diagram implemented  → renders the G3 SVG with G3 caption/alt/provenance and QA status.
+ * - otherwise                            → visible placeholder keeping the original caption (no redraw from memory).
+ */
+import type { Figure as Fig } from '@lib/content';
+import { diagramById } from '@lib/content';
+interface Props { figure: Fig }
+const { figure } = Astro.props;
+const diagrams = (figure.diagram_ids ?? []).map(diagramById).filter((d): d is NonNullable<typeof d> => !!d);
+---
+{diagrams.length > 0 ? diagrams.map((d) => (
+  <figure class="figure" id={`fig-${d.id}`}>
+    <img src={d.file} alt={d.alt} width={d.width} height={d.height} loading="lazy" decoding="async" />
+    <figcaption>
+      <strong>{d.id}</strong> {d.caption}
+      <span class="prov">
+        ภาพวาดใหม่ตามสเปก G3 (Gemini) · {d.provenance} · ต้นแบบ: {d.source} · สัญลักษณ์: {d.semantics} · สถานะ: {d.status}
+        {figure.caption_original && <> · คำบรรยายต้นฉบับ: “{figure.caption_original}”</>}
+      </span>
+    </figcaption>
+  </figure>
+)) : (
+  <figure class="figure placeholder">
+    <div class="slot" role="img" aria-label={`ภาพประกอบจากหนังสือ ${figure.ref}${figure.caption_original ? ': ' + figure.caption_original : ''} (ยังไม่มีไฟล์ภาพ)`}>
+      <span>
+        🖼 ภาพประกอบจากหนังสือ · {figure.ref}<br />
+        {figure.needs_redraw ? 'รอภาพวาดใหม่ (needs_redraw)' : 'รอไฟล์ภาพสแกน/asset จากโครงการ'}
+      </span>
+    </div>
+    <figcaption>
+      {figure.caption_original && <>คำบรรยายตามต้นฉบับ: “{figure.caption_original}”</>}
+      <span class="prov">ORIGINAL BOOK KNOWLEDGE (คำบรรยายภาพตามหนังสือ) · แหล่ง {figure.ref}{figure.note ? ` · ${figure.note}` : ''}</span>
+    </figcaption>
+  </figure>
+)}
