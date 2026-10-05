@@ -16,7 +16,7 @@ Not merged to `main`, not deployed. No deployment settings were added. PUBLISH_R
 
 | SHA | Scope |
 |---|---|
-| (this commit) | docs: C2 implementation report |
+| `17f0aed` | docs: C2 implementation report (report amended in the following commit with its own SHA) |
 | `1f5bbac` | ci: content validator, link checker, tests, GitHub Actions, README |
 | `33d547d` | assets: G3 redraw diagrams V01, V04, V06–V11 as SVG + manifest |
 | `57c97e8` | feat: components, routes, search and provenance pages |
