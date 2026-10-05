@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Validate certified content (provenance, refs, era, privacy blocklist, critical values)
+        run: npm run validate
+      - name: Unit tests
+        run: npm test
+      - name: Type check
+        run: npm run check
+      - name: Production build
+        run: npm run build
+      - name: Internal link check
+        run: npm run check:links
+      - name: Secrets / private data sanity
+        run: |
+          ! grep -rEn "(AIza[0-9A-Za-z_-]{30,}|sk-[A-Za-z0-9]{20,}|BEGIN (RSA|OPENSSH) PRIVATE KEY)" --exclude-dir=node_modules --exclude-dir=dist --exclude-dir=.git . || (echo "secret-like string found" && exit 1)
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site-dist
+          path: dist
+          retention-days: 7
