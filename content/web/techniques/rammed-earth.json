@@ -45,7 +45,7 @@
     { "id": "s1", "text": "ควรค่อยๆ ทำ ปล่อยให้แห้งก่อนถอดแบบและทำชั้นต่อไป เพื่อป้องกันการพัง", "type": "C", "mod": "Rc", "ref": "PDF 51R" }
   ],
   "common_problems": [],
-  "era_notice": { "year_be": 2548, "scope": "inline", "kinds": ["statement-of-present"], "claim_ids": ["ratio-cement"], "proposed": true, "note": "เสนอ — ข้อความ 'ในบางประเทศมีการผสมซีเมนต์' สะท้อนช่วงเวลาที่เขียน; ChatGPT ยืนยัน" },
+  "era_notice": { "year_be": 2548, "scope": "inline", "kinds": ["statement-of-present"], "claim_ids": ["ratio-cement"], "confirmed_by": "ChatGPT QA — CCR-02 (5 ต.ค. 2569)", "note": "ข้อความ 'ในบางประเทศมีการผสมซีเมนต์' สะท้อนช่วงเวลาที่เขียน (บริบทต่างประเทศ ณ พ.ศ. 2548)" },
   "source_refs": ["PDF 51L–51R (หนังสือหน้า ๙๘–๙๙)"],
   "read_original": ["orig:MASTER:ชุด06/เทคนิคดินอัด (Rammed Earth)"],
   "related_topics": ["wc-compare-techniques", "wc-howto-adobe", "wc-howto-cob"],

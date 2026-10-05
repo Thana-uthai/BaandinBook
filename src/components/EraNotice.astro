@@ -1,8 +1,8 @@
 ---
 /**
  * EraNotice (D005/D007). Renders the certified era_notice object as-is.
- * `proposed` notices are shown but labelled as proposals awaiting ChatGPT confirmation —
- * the certified text is never altered here.
+ * `proposed` notices are shown but labelled as proposals awaiting ChatGPT confirmation;
+ * `confirmed_by` notices show who confirmed them. The certified text is never altered here.
  */
 import type { EraNotice } from '@lib/content';
 import { BOOK } from '@lib/content';
@@ -20,7 +20,10 @@ const kinds = notice.kinds.join(', ');
     )}
   </p>
   {notice.note && <p class="small">{notice.note}</p>}
-  {notice.proposed && (
+  {notice.proposed && !notice.confirmed_by && (
     <p class="small"><strong>สถานะป้าย:</strong> ข้อเสนอจากผู้จัดทำเนื้อหา — รอ ChatGPT QA ยืนยันหรือปรับ{notice.decision_pending ? ' (ยังไม่ได้ตัดสิน)' : ''}</p>
+  )}
+  {notice.confirmed_by && (
+    <p class="small"><strong>สถานะป้าย:</strong> ยืนยันแล้วโดย {notice.confirmed_by}</p>
   )}
 </div>

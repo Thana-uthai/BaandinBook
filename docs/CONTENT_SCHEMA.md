@@ -34,7 +34,7 @@ The site **reads** these files; it never rewrites them. Types live in `src/lib/c
 | `comparison` | `Comparison` (T12 only; certified columns only) |
 | `index_rows[]` | `IndexRows` (T05 path, T20 problems index) |
 | `figures[]` | `Figure`: `needs_redraw` + `diagram_ids` → G3 SVG; otherwise placeholder with original caption |
-| `era_notice` | `EraNotice` (`proposed: true` = proposal awaiting ChatGPT confirmation, shown as such) |
+| `era_notice` | `EraNotice` (`proposed: true` = proposal awaiting ChatGPT confirmation, shown as such; `confirmed_by` = confirmed, shown as "ยืนยันแล้วโดย …") |
 | `source_refs`, `read_original`, `related_topics`, `qa_closure`, `editorial_notes`, `presentation_cautions` | provenance footer |
 
 ### Claim
