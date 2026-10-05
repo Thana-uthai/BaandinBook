@@ -3,9 +3,9 @@
   "_symbol_rule": "OCR 4 = ✓ and OCR 8 = ✗ where verified. Never display 4/8 as semantic labels.",
   "_status_vocab": {
     "CHATGPT_SOURCE_VISUAL_QA_PASSED": "ChatGPT inspected the actual book scan against the SVG (C5 report, 5 ต.ค. 2569): meaning and ✓/✗ semantics preserved, no redraw required.",
-    "IMPLEMENTED_C5_CORRECTION_PENDING_CHATGPT_FINAL_VISUAL_QA": "SVG redrawn by Claude Code C5 from ChatGPT's source findings (C5 report). Awaiting ChatGPT final visual QA against the scan before merge/publish. Not passed yet."
+    "IMPLEMENTED_C5_CORRECTION_PENDING_CHATGPT_FINAL_VISUAL_QA": "SVG redrawn by Claude Code C5/C5B from ChatGPT's source findings, awaiting ChatGPT final visual QA. Historical: V07/V11 carried this status until C5B_FINAL_VISUAL_QA_PASSED (5 ต.ค. 2569); no diagram holds it now."
   },
-  "_qa_history": "C2: all 8 SVGs drawn from the G3 textual spec (status IMPLEMENTED_FROM_G3_SPEC_PENDING_CHATGPT_QA, now retired). C5: V01, V04, V06, V08, V09, V10 passed ChatGPT source-visual QA unchanged; V07 and V11 corrected per C5 findings — see docs/DIAGRAMS_QA_STATUS.md.",
+  "_qa_history": "C2: all 8 SVGs drawn from the G3 textual spec (status IMPLEMENTED_FROM_G3_SPEC_PENDING_CHATGPT_QA, now retired). C5: V01, V04, V06, V08, V09, V10 passed ChatGPT source-visual QA unchanged; V07 and V11 corrected per C5 findings, revised per C5B, then passed ChatGPT final visual QA (C5B_FINAL_VISUAL_QA_PASSED, merged via PR #2) — see docs/DIAGRAMS_QA_STATUS.md.",
   "diagrams": [
     {
       "id": "V01",
@@ -67,7 +67,8 @@
       "alt": "ภาพตัดแนวดิ่งเรียงซ้อนกัน ๔ แบบ แสดงผนังเหนือช่องเปิด ทับหลัง และวงกบ: แบบที่ ๑ ทับหลังเรียบ มีเครื่องหมายไม่แนะนำ แบบแผ่นไม้มีบัวหยดน้ำ แบบไม้ท่อนใหญ่ และแบบไม้ท่อนเล็ก มีเครื่องหมายถูกต้อง ข้อความข้างภาพในหนังสือระบุว่าทับหลังควรกว้างอย่างน้อย 15 ซม.",
       "provenance": "EDITORIAL (D008) / ภาพลายเส้นต้นฉบับ",
       "semantics": "8 = แบบที่ ๑ ทับหลังเรียบบนวงกบ (✗) / 4 = แผ่นไม้มีบัวหยดน้ำ, ไม้ท่อนใหญ่, ไม้ท่อนเล็ก (✓)",
-      "status": "IMPLEMENTED_C5_CORRECTION_PENDING_CHATGPT_FINAL_VISUAL_QA",
+      "status": "CHATGPT_SOURCE_VISUAL_QA_PASSED",
+      "qa_confirmed_by": "ChatGPT — C5B_FINAL_VISUAL_QA_PASSED (5 ต.ค. 2569), merge approved at PR #2 head c95b37c",
       "c5_note": "C5: ต้นฉบับอยู่ที่ PDF 055 (เดิมระบุ PDF 056) เป็นภาพตัดแนวดิ่ง ๔ แบบเรียงซ้อนกัน สัญลักษณ์ 8,4,4,4 ป้าย วงกบ/แผ่นไม้/บัวหยดน้ำ/ไม้ท่อนใหญ่/ไม้ท่อนเล็ก ไม่ใช่ภาพเปรียบเทียบ ๓ ช่องตามสเปก G3 — ตัดซุ้มโค้งและระยะยื่น ๑๕ ซม. ข้างละออก. C5B: ตัดฝน ลูกศรน้ำ ป้ายภายนอก/ภายใน และคำอธิบายพฤติกรรมน้ำที่ไม่มีในต้นฉบับออก จัดเรียงบนลงล่างตามต้นฉบับ ใช้ป้ายตามต้นฉบับเท่านั้น. ข้อความ 'กว้างอย่างน้อย ๑๕ ซม.' มาจากข้อความข้างภาพ ไม่ใช่ตัวภาพ. ไฟล์สแกน pdfหน้า055.jpg ยังไม่มีใน 04_ภาพประกอบ",
       "topic_note": "หัวข้อวงกบ/ทับหลัง (ชุด06 PDF 053–056) ยังไม่อยู่ใน P0 T01–T26 — asset พร้อมใช้ในเฟสถัดไป",
       "width": 620,
@@ -134,7 +135,8 @@
       "alt": "ภาพเตือนตามหนังสือ: อาคารสองส่วนอยู่ติดกัน ชายคาของหลังคาส่วนซ้ายหันไปทางส่วนขวา น้ำฝนจากหลังคาไหลลงโดนผนังดินของส่วนที่อยู่ติดกัน มีเครื่องหมายไม่แนะนำ",
       "provenance": "EDITORIAL (D008) / ภาพลายเส้นต้นฉบับ",
       "semantics": "8 = น้ำจากหลังคาส่วนหนึ่งไหลลงโดนผนังดินของอาคารส่วนที่อยู่ติดกัน (✗) — ต้นฉบับมีเฉพาะภาพเตือน ไม่มีภาพเปรียบเทียบแบบถูกต้อง",
-      "status": "IMPLEMENTED_C5_CORRECTION_PENDING_CHATGPT_FINAL_VISUAL_QA",
+      "status": "CHATGPT_SOURCE_VISUAL_QA_PASSED",
+      "qa_confirmed_by": "ChatGPT — C5B_FINAL_VISUAL_QA_PASSED (5 ต.ค. 2569), merge approved at PR #2 head c95b37c",
       "c5_note": "C5: ต้นฉบับ (PDF 059 หน้า ๑๑๕ รูปล่าง) เป็นภาพเตือนภาพเดียว เครื่องหมาย 8/✗; ช่อง 'ชายคายื่นยาว + ร่องระบายน้ำ (✓)' ที่สเปก G3 เพิ่มไว้ไม่มีในต้นฉบับ จึงตัดออก. C5B: เปลี่ยนจากหลังคาสองจั่วสมมาตรเทน้ำลงผนังกลาง เป็นอาคารสองส่วนติดกัน/เหลื่อมกัน น้ำจากชายคาของส่วนหนึ่งไหลลงโดนผนังดินของอีกส่วน ตัดการกร่อนที่ฐานออก; ข้อความในหนังสือข้างภาพ: ระวังไม่ให้ชายคาหันไปในทิศทางที่จะไปเจอกับตัวผนังบ้าน เพราะน้ำฝนจะชะทำให้ผนังพังได้",
       "width": 800,
       "height": 420
