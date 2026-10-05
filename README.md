@@ -5,8 +5,9 @@ Static website for the project **จากดินสู่บ้าน** (know
 workspace (C2). The **content** source of truth stays in the certified project Google Drive
 (Web Content P0 T01–T26, `WEB_QA_PASSED`); `content/web/` is a faithful transcription of it.
 
-> Status: **C2_IMPLEMENTED_PENDING_CHATGPT_QA** — see `docs/C2_IMPLEMENTATION_REPORT.md`.
-> Do not merge to `main` or deploy to production without Owner + ChatGPT QA approval.
+> Status: **P0 release QA passed** — C2 build → C4 label cleanup → C5/C5B diagram corrections → C6 visual QA 8/8 passed
+> (`docs/C2_IMPLEMENTATION_REPORT.md`, `docs/DIAGRAMS_QA_STATUS.md`). Production branch: `main`.
+> Content changes still require Owner + ChatGPT QA approval; deployment only from `main` with Owner authorization.
 
 ## Stack
 
