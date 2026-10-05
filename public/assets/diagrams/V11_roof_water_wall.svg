@@ -1,46 +1,50 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420" role="img" aria-labelledby="t d" font-family="Sarabun, 'Noto Sans Thai', Tahoma, sans-serif" font-size="18">
-  <title id="t">V11 น้ำจากหลังคาโดนผนังดิน</title>
-  <desc id="d">แผนภาพแสดงทิศทางน้ำฝน: ชายคายื่นสั้นเกินไป น้ำฝนพัดสาดปะทะผนังดินโดยตรง ดินชะล้างพังทลาย (ข้อผิดพลาด ✗); ชายคายื่นยาวพ้นตัวบ้าน แนวหยดน้ำพ้นผนัง พร้อมร่องระบายน้ำรอบฐานราก (ถูกต้อง ✓). ที่มา: ภาพลายเส้นต้นฉบับ PDF 059 / หนังสือหน้า ๑๑๕ รูปล่าง · วาดใหม่ตามสเปก G3 · EDITORIAL (D008)</desc>
+  <title id="t">V11 ระวังน้ำที่ไหลจากหลังคาโดนผนังดิน จะทำให้พังเร็ว</title>
+  <desc id="d">ภาพเตือนตามต้นฉบับ (เครื่องหมาย ✗ ต้นฉบับ 8): อาคารสองส่วนอยู่ติดกัน ชายคาของหลังคาส่วนซ้ายหันไปทางส่วนขวา น้ำฝนที่ไหลจากหลังคาส่วนซ้ายจึงตกลงโดนผนังดินของส่วนที่อยู่ติดกัน. ข้อความในหนังสือเตือนว่าอย่าให้ชายคาหันไปในทิศทางที่น้ำจะไปเจอกับผนังบ้าน เพราะน้ำฝนจะชะทำให้ผนังพังได้. ต้นฉบับมีเฉพาะภาพเตือนนี้ ไม่มีภาพเปรียบเทียบแบบถูกต้อง. ที่มา: ภาพลายเส้นต้นฉบับ PDF 059 / หนังสือหน้า ๑๑๕ รูปล่าง · วาดใหม่ตามผลตรวจเทียบสแกน C5/C5B (ChatGPT) · EDITORIAL (D008)</desc>
   <defs>
-    <symbol id="ok" viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#2e7d32"/><polyline points="10,21 17,28 30,13" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="no" viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#c62828"/><path d="M12 12 L28 28 M28 12 L12 28" stroke="#fff" stroke-width="4.5" stroke-linecap="round"/></symbol>
     <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#3b7dd8"/></marker>
+    <pattern id="earth" width="12" height="12" patternUnits="userSpaceOnUse"><rect width="12" height="12" fill="#e8d7c3"/><path d="M0 12 L12 0" stroke="#9c7a56" stroke-width="1.4"/></pattern>
   </defs>
   <rect width="800" height="420" fill="#fff"/>
-  <!-- rain slanted (wind-driven) -->
-  <g stroke="#9ec5ee" stroke-width="2"><g id="r"><line x1="40" y1="30" x2="28" y2="56"/><line x1="90" y1="30" x2="78" y2="56"/><line x1="140" y1="30" x2="128" y2="56"/><line x1="190" y1="30" x2="178" y2="56"/><line x1="240" y1="30" x2="228" y2="56"/><line x1="290" y1="30" x2="278" y2="56"/><line x1="340" y1="30" x2="328" y2="56"/></g><use href="#r" x="400"/></g>
+  <!-- caption verbatim from the book figure -->
+  <text x="400" y="34" text-anchor="middle" font-weight="700">ระวังน้ำที่ไหลจากหลังคาโดนผนังดิน จะทำให้พังเร็ว</text>
+  <!-- rain (present in the source) -->
+  <g stroke="#9ec5ee" stroke-width="2" stroke-linecap="round">
+    <g id="rain"><line x1="60" y1="60" x2="50" y2="84"/><line x1="100" y1="70" x2="90" y2="94"/><line x1="140" y1="56" x2="130" y2="80"/><line x1="180" y1="72" x2="170" y2="96"/><line x1="220" y1="58" x2="210" y2="82"/><line x1="260" y1="74" x2="250" y2="98"/><line x1="300" y1="60" x2="290" y2="84"/><line x1="340" y1="76" x2="330" y2="100"/><line x1="380" y1="62" x2="370" y2="86"/></g>
+    <use href="#rain" x="340"/>
+    <use href="#rain" x="20" y="40"/>
+    <use href="#rain" x="360" y="40"/>
+  </g>
   <!-- ground -->
-  <line x1="20" y1="340" x2="780" y2="340" stroke="#555" stroke-width="3"/>
-  <!-- LEFT: short eave -->
-  <g>
-    <text x="200" y="88" text-anchor="middle" font-weight="700">ชายคายื่นสั้นเกินไป</text>
-    <rect x="130" y="190" width="140" height="150" fill="#d9b38c" stroke="#5a3b1c" stroke-width="3"/>
-    <!-- roof barely past wall -->
-    <path d="M118 190 L200 120 L282 190 Z" fill="#c98a4c" stroke="#5a3b1c" stroke-width="4" stroke-linejoin="round"/>
-    <!-- rain hitting wall -->
-    <g stroke="#3b7dd8" stroke-width="3" fill="none" marker-end="url(#arr)"><path d="M300 150 L270 230"/><path d="M320 180 L272 270"/><path d="M290 110 L300 150" stroke-dasharray="4 4" marker-end="none"/><path d="M100 150 L130 230"/><path d="M80 180 L128 270"/></g>
-    <!-- erosion -->
-    <g fill="#b58a5e" stroke="#5a3b1c" stroke-width="1.5"><path d="M270 250 q-14 10 -4 22 q-10 14 2 24 q-8 14 4 26 L270 340 Z"/><path d="M130 250 q14 10 4 22 q10 14 -2 24 q8 14 -4 26 L130 340 Z"/></g>
-    <g fill="#b58a5e"><circle cx="292" cy="330" r="5"/><circle cx="305" cy="336" r="4"/><circle cx="110" cy="330" r="5"/><circle cx="96" cy="336" r="4"/></g>
-    <text x="200" y="372" text-anchor="middle" font-size="15" fill="#c62828">น้ำฝนสาดปะทะผนังดิน ดินชะล้างพังทลาย</text>
-    <text x="200" y="400" text-anchor="middle" font-weight="700" fill="#c62828">ข้อผิดพลาด</text>
-    <use href="#no" x="300" y="100" width="48" height="48"/>
+  <rect x="20" y="340" width="760" height="14" fill="#333"/>
+
+  <!-- RIGHT building portion (taller / offset); its left earthen wall stands in the runoff path -->
+  <rect x="420" y="150" width="300" height="190" fill="url(#earth)" stroke="#5a3b1c" stroke-width="2.5"/>
+  <path d="M392 160 L570 60 L748 160 L736 160 L570 72 L404 160 Z" fill="#c98a4c"/>
+  <path d="M392 160 L570 60 L748 160" fill="none" stroke="#5a3b1c" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- LEFT building portion (lower); its right eave points at the adjacent wall -->
+  <rect x="90" y="236" width="300" height="104" fill="#f6efe4" stroke="#5a3b1c" stroke-width="2.5"/>
+  <path d="M60 246 L240 150 L420 246 L408 246 L240 162 L72 246 Z" fill="#c98a4c"/>
+  <path d="M60 246 L240 150 L420 246" fill="none" stroke="#5a3b1c" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- runoff from the left roof flowing to its eave and striking the adjacent earthen wall -->
+  <g stroke="#3b7dd8" stroke-width="3.5" fill="none" stroke-linecap="round">
+    <path d="M270 170 L408 243" marker-end="url(#arr)"/>
   </g>
-  <line x1="400" y1="70" x2="400" y2="410" stroke="#bbb" stroke-dasharray="8 6"/>
-  <!-- RIGHT: long eave + drainage trench -->
-  <g>
-    <text x="600" y="88" text-anchor="middle" font-weight="700">ชายคายื่นยาวคุ้มผนัง</text>
-    <rect x="530" y="190" width="140" height="150" fill="#d9b38c" stroke="#5a3b1c" stroke-width="3"/>
-    <path d="M460 190 L600 110 L740 190 Z" fill="#c98a4c" stroke="#5a3b1c" stroke-width="4" stroke-linejoin="round"/>
-    <!-- drip line beyond wall -->
-    <g stroke="#3b7dd8" stroke-width="3" fill="none" marker-end="url(#arr)"><path d="M740 196 L740 300"/><path d="M460 196 L460 300"/></g>
-    <g fill="#3b7dd8"><circle cx="740" cy="250" r="4"/><circle cx="460" cy="250" r="4"/></g>
-    <text x="705" y="250" font-size="13" fill="#1d4ed8">แนวหยดน้ำ</text>
-    <!-- drainage trench around foundation -->
-    <path d="M725 340 q15 -22 30 0 Z" fill="#9ec5ee" stroke="#333" stroke-width="2"/>
-    <path d="M445 340 q15 -22 30 0 Z" fill="#9ec5ee" stroke="#333" stroke-width="2"/>
-    <text x="600" y="372" text-anchor="middle" font-size="15">ร่องระบายน้ำรอบฐานราก · ผนังไม่โดนฝน</text>
-    <text x="600" y="400" text-anchor="middle" font-weight="700">ถูกต้อง</text>
-    <use href="#ok" x="700" y="100" width="48" height="48"/>
+  <g fill="#7fb3e6" opacity="0.9"><path d="M406 240 q8 -12 16 -2 q6 4 2 12 q-10 4 -18 -2 Z"/></g>
+  <g stroke="#3b7dd8" stroke-width="2.5" fill="none" stroke-linecap="round">
+    <path d="M424 252 q-5 14 0 28 q-5 14 0 28 q-4 12 0 22"/>
+    <path d="M414 240 l-12 -10"/><path d="M416 262 l-14 2"/><path d="M416 284 l-12 8"/>
   </g>
+  <g fill="#3b7dd8"><ellipse cx="438" cy="270" rx="3" ry="5"/><ellipse cx="398" cy="300" rx="3.5" ry="6"/><ellipse cx="444" cy="300" rx="3" ry="5"/><ellipse cx="404" cy="326" rx="3" ry="5"/></g>
+
+  <!-- labels (editorial, minimal) -->
+  <line x1="480" y1="300" x2="560" y2="300" stroke="#333" stroke-width="1"/>
+  <text x="566" y="305" font-size="15" fill="#333">ผนังดินของอาคารส่วนที่อยู่ติดกัน</text>
+  <text x="400" y="378" text-anchor="middle" font-size="15" fill="#c62828">น้ำจากหลังคาส่วนซ้ายไหลลงโดนผนังดินของส่วนขวา</text>
+  <text x="400" y="402" text-anchor="middle" font-size="14" fill="#555">ที่มา: หนังสือหน้า ๑๑๕ (PDF 059) · ต้นฉบับมีเฉพาะภาพเตือน (เครื่องหมาย ✗) · วาดใหม่ · EDITORIAL (D008)</text>
+  <!-- source symbol 8 → ✗ -->
+  <use href="#no" x="724" y="90" width="52" height="52"/>
 </svg>

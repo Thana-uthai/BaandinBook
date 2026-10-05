@@ -185,7 +185,11 @@ export interface DiagramSpec {
   alt: string;
   provenance: string;
   semantics: string;
+  /** one of STATUS_VOCAB keys (content/diagrams.json `_status_vocab`) */
   status: string;
+  /** C5 (JOB-20261005-CLAUDECODE-07): what was corrected vs the G3 spec, if anything */
+  c5_note?: string;
+  topic_note?: string;
   width: number;
   height: number;
 }
@@ -239,6 +243,9 @@ export function urlForId(id: string): string | undefined {
 import diagramsJson from '../../content/diagrams.json';
 
 export const DIAGRAMS: DiagramSpec[] = (diagramsJson as { diagrams: DiagramSpec[] }).diagrams;
+
+/** Per-diagram QA status vocabulary (auditable: passed vs correction-pending). */
+export const DIAGRAM_STATUS_VOCAB: Record<string, string> = (diagramsJson as { _status_vocab: Record<string, string> })._status_vocab;
 
 export function diagramById(id: string): DiagramSpec | undefined {
   return DIAGRAMS.find((d) => d.id === id);

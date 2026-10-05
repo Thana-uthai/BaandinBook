@@ -1,9 +1,11 @@
 {
-  "_contract": "HANDOFF_GEMINI_G3_TO_CHATGPT — PROJECT COPY (Drive ID 1HTJt22_5mpL-o2-lbhRqT5FYd3WgszKQ4UXd1581DyI) · G3_QA_RESULT: PASSED_AS_SPECIFICATION · 8 redraw groups / 9 diagrams",
+  "_contract": "HANDOFF_GEMINI_G3_TO_CHATGPT — PROJECT COPY (Drive ID 1HTJt22_5mpL-o2-lbhRqT5FYd3WgszKQ4UXd1581DyI) · G3_QA_RESULT: PASSED_AS_SPECIFICATION · 8 diagrams · C5 source-visual QA by ChatGPT: C5_VISUAL_QA_REPORT_AND_CLAUDE_CORRECTION_PROMPT (JOB-20261005-CLAUDECODE-07)",
   "_symbol_rule": "OCR 4 = ✓ and OCR 8 = ✗ where verified. Never display 4/8 as semantic labels.",
   "_status_vocab": {
-    "IMPLEMENTED_FROM_G3_SPEC_PENDING_CHATGPT_QA": "SVG drawn by Claude Code C2 from the G3 textual spec (geometry/labels per spec, not from memory). Needs ChatGPT QA against the scan before publish."
+    "CHATGPT_SOURCE_VISUAL_QA_PASSED": "ChatGPT inspected the actual book scan against the SVG (C5 report, 5 ต.ค. 2569): meaning and ✓/✗ semantics preserved, no redraw required.",
+    "IMPLEMENTED_C5_CORRECTION_PENDING_CHATGPT_FINAL_VISUAL_QA": "SVG redrawn by Claude Code C5 from ChatGPT's source findings (C5 report). Awaiting ChatGPT final visual QA against the scan before merge/publish. Not passed yet."
   },
+  "_qa_history": "C2: all 8 SVGs drawn from the G3 textual spec (status IMPLEMENTED_FROM_G3_SPEC_PENDING_CHATGPT_QA, now retired). C5: V01, V04, V06, V08, V09, V10 passed ChatGPT source-visual QA unchanged; V07 and V11 corrected per C5 findings — see docs/DIAGRAMS_QA_STATUS.md.",
   "diagrams": [
     {
       "id": "V01",
@@ -17,7 +19,7 @@
       "alt": "ผังเปรียบเทียบ 2 แบบ แบบที่ถูกต้องคือวางตัวบ้านยาวตามแนวทิศตะวันออก-ตะวันตกเพื่อหลบแดดและรับลมเหนือ-ใต้",
       "provenance": "EDITORIAL (D008) / ภาพสเก็ตช์ต้นฉบับหนังสือจากดินสู่บ้าน",
       "semantics": "4 = ถูกต้อง (✓) / 8 = ไม่แนะนำ (✗)",
-      "status": "IMPLEMENTED_FROM_G3_SPEC_PENDING_CHATGPT_QA",
+      "status": "CHATGPT_SOURCE_VISUAL_QA_PASSED",
       "width": 800,
       "height": 560
     },
@@ -33,7 +35,7 @@
       "alt": "ภาพเปรียบเทียบการทดสอบความแข็งแรงของอิฐดินดิบ ก้อนที่บิ่นแค่มุมถือว่าผ่าน ก้อนที่แตกละเอียดถือว่าไม่ได้มาตรฐาน",
       "provenance": "EDITORIAL (D008) / ภาพลายเส้นต้นฉบับ",
       "semantics": "4 = อิฐบิ่นมุมเล็กน้อย ถือว่าใช้ได้ (✓) / 8 = อิฐแตกหักทั้งก้อน ถือว่าใช้ไม่ได้ (✗)",
-      "status": "IMPLEMENTED_FROM_G3_SPEC_PENDING_CHATGPT_QA",
+      "status": "CHATGPT_SOURCE_VISUAL_QA_PASSED",
       "width": 800,
       "height": 420
     },
@@ -49,7 +51,7 @@
       "alt": "รอยเท้าเมื่อยกเท้าขึ้นแล้วดินไม่ยุบตัวกลบรอยเท้าแสดงว่าความเหนียวพอดีพร้อมนำไปใส่ไม้แบบ",
       "provenance": "EDITORIAL (D008) / ภาพลายเส้นต้นฉบับ",
       "semantics": "4 = ดินเหนียวพอดีคงรูป (✓) / 8 = ดินเหลวเกินไป (✗)",
-      "status": "IMPLEMENTED_FROM_G3_SPEC_PENDING_CHATGPT_QA",
+      "status": "CHATGPT_SOURCE_VISUAL_QA_PASSED",
       "width": 800,
       "height": 420
     },
@@ -57,18 +59,19 @@
       "id": "V07",
       "file": "/assets/diagrams/V07_lintels.svg",
       "title": "ลักษณะของทับหลังในแบบต่าง ๆ",
-      "source": "PDF 056 / หนังสือหน้า ๑๐๗",
+      "source": "PDF 055 / หนังสือหน้า ๑๐๗",
       "book_page": "๑๐๗",
-      "ref_image": "04_ภาพประกอบ/pdfหน้า056.jpg",
+      "ref_image": "04_ภาพประกอบ/pdfหน้า055.jpg",
       "topics": [],
-      "caption": "ลักษณะของคานทับหลังและการถ่ายน้ำหนักเหนือช่องเปิดประตูหน้าต่าง",
-      "alt": "ผังแสดงการติดตั้งคานทับหลังไม้ที่ถูกต้อง ต้องยื่นเลยขอบวงกบข้างละไม่ต่ำกว่า 15 ซม. เพื่อถ่ายแรง",
+      "caption": "ลักษณะของทับหลังในแบบต่าง ๆ (ภาพตัดแนวดิ่ง ๔ แบบเรียงซ้อนกันตามต้นฉบับ): แบบที่ ๑ ทับหลังเรียบบนวงกบ (✗) · แผ่นไม้มีบัวหยดน้ำ (✓) · ไม้ท่อนใหญ่ (✓) · ไม้ท่อนเล็ก (✓)",
+      "alt": "ภาพตัดแนวดิ่งเรียงซ้อนกัน ๔ แบบ แสดงผนังเหนือช่องเปิด ทับหลัง และวงกบ: แบบที่ ๑ ทับหลังเรียบ มีเครื่องหมายไม่แนะนำ แบบแผ่นไม้มีบัวหยดน้ำ แบบไม้ท่อนใหญ่ และแบบไม้ท่อนเล็ก มีเครื่องหมายถูกต้อง ข้อความข้างภาพในหนังสือระบุว่าทับหลังควรกว้างอย่างน้อย 15 ซม.",
       "provenance": "EDITORIAL (D008) / ภาพลายเส้นต้นฉบับ",
-      "semantics": "4 = มีระยะยื่นอย่างน้อย ๑๕ ซม. (✓) / 8 = ไม่มีระยะยื่น (✗)",
-      "status": "IMPLEMENTED_FROM_G3_SPEC_PENDING_CHATGPT_QA",
+      "semantics": "8 = แบบที่ ๑ ทับหลังเรียบบนวงกบ (✗) / 4 = แผ่นไม้มีบัวหยดน้ำ, ไม้ท่อนใหญ่, ไม้ท่อนเล็ก (✓)",
+      "status": "IMPLEMENTED_C5_CORRECTION_PENDING_CHATGPT_FINAL_VISUAL_QA",
+      "c5_note": "C5: ต้นฉบับอยู่ที่ PDF 055 (เดิมระบุ PDF 056) เป็นภาพตัดแนวดิ่ง ๔ แบบเรียงซ้อนกัน สัญลักษณ์ 8,4,4,4 ป้าย วงกบ/แผ่นไม้/บัวหยดน้ำ/ไม้ท่อนใหญ่/ไม้ท่อนเล็ก ไม่ใช่ภาพเปรียบเทียบ ๓ ช่องตามสเปก G3 — ตัดซุ้มโค้งและระยะยื่น ๑๕ ซม. ข้างละออก. C5B: ตัดฝน ลูกศรน้ำ ป้ายภายนอก/ภายใน และคำอธิบายพฤติกรรมน้ำที่ไม่มีในต้นฉบับออก จัดเรียงบนลงล่างตามต้นฉบับ ใช้ป้ายตามต้นฉบับเท่านั้น. ข้อความ 'กว้างอย่างน้อย ๑๕ ซม.' มาจากข้อความข้างภาพ ไม่ใช่ตัวภาพ. ไฟล์สแกน pdfหน้า055.jpg ยังไม่มีใน 04_ภาพประกอบ",
       "topic_note": "หัวข้อวงกบ/ทับหลัง (ชุด06 PDF 053–056) ยังไม่อยู่ใน P0 T01–T26 — asset พร้อมใช้ในเฟสถัดไป",
-      "width": 900,
-      "height": 420
+      "width": 620,
+      "height": 1000
     },
     {
       "id": "V08",
@@ -82,7 +85,7 @@
       "alt": "ภาพตัดขวางขอบหน้าต่างด้านนอกที่ปาดเอียงเพื่อระบายน้ำฝน ป้องกันดินเปื่อยยุ่ย",
       "provenance": "EDITORIAL (D008) / ภาพลายเส้นต้นฉบับ",
       "semantics": "4 = ขอบปาดเอียงระบายน้ำ (✓) / 8 = ขอบระนาบน้ำขัง (✗)",
-      "status": "IMPLEMENTED_FROM_G3_SPEC_PENDING_CHATGPT_QA",
+      "status": "CHATGPT_SOURCE_VISUAL_QA_PASSED",
       "topic_note": "หัวข้อช่องเปิด (ชุด06 PDF 056–057) ยังไม่อยู่ใน P0 T01–T26 — asset พร้อมใช้ในเฟสถัดไป",
       "width": 800,
       "height": 420
@@ -99,7 +102,7 @@
       "alt": "แผนภาพเปรียบเทียบองศาหลังคา ยิ่งหลังคาชันน้ำยิ่งระบายได้เร็ว ลดความเสี่ยงการรั่วซึมของบ้านดิน",
       "provenance": "EDITORIAL (D008) / ภาพลายเส้นต้นฉบับ",
       "semantics": "4 = หลังคาชันระบายน้ำเร็ว (✓) / 8 = หลังคาลาดต่ำเสี่ยงน้ำย้อน (✗)",
-      "status": "IMPLEMENTED_FROM_G3_SPEC_PENDING_CHATGPT_QA",
+      "status": "CHATGPT_SOURCE_VISUAL_QA_PASSED",
       "width": 800,
       "height": 420
     },
@@ -115,7 +118,7 @@
       "alt": "ผังเตือนอันตรายจากการทำรางน้ำกลางบ้าน น้ำฝนที่ระบายไม่ทันจะไหลล้นเข้าทำลายผนังดินภายใน",
       "provenance": "EDITORIAL (D008) / ภาพลายเส้นต้นฉบับ",
       "semantics": "8 = ข้อควรหลีกเลี่ยงอย่างยิ่งในการสร้างบ้านดิน (✗)",
-      "status": "IMPLEMENTED_FROM_G3_SPEC_PENDING_CHATGPT_QA",
+      "status": "CHATGPT_SOURCE_VISUAL_QA_PASSED",
       "width": 800,
       "height": 400
     },
@@ -127,11 +130,12 @@
       "book_page": "๑๑๕",
       "ref_image": "04_ภาพประกอบ/pdfหน้า059.jpg",
       "topics": ["wc-checklist-roof-basics", "wc-faq-rain-melt"],
-      "caption": "ข้อควรระวัง: ชายคาสั้นทำให้น้ำฝนชะล้างผนังดินจนเกิดความเสียหาย",
-      "alt": "แผนภาพแสดงทิศทางน้ำฝนตกกระทบผนังดินเมื่อชายคาสั้นเกินไป และแนวทางการทำชายคายื่นยาวเพื่อคุ้มฝน",
+      "caption": "ข้อควรระวัง: น้ำที่ไหลจากหลังคาโดนผนังดิน จะทำให้พังเร็ว",
+      "alt": "ภาพเตือนตามหนังสือ: อาคารสองส่วนอยู่ติดกัน ชายคาของหลังคาส่วนซ้ายหันไปทางส่วนขวา น้ำฝนจากหลังคาไหลลงโดนผนังดินของส่วนที่อยู่ติดกัน มีเครื่องหมายไม่แนะนำ",
       "provenance": "EDITORIAL (D008) / ภาพลายเส้นต้นฉบับ",
-      "semantics": "8 = ชายคาสั้นน้ำสาดผนังดิน (✗) / แก้ไขด้วยชายคายื่นยาวคุ้มผนัง (✓)",
-      "status": "IMPLEMENTED_FROM_G3_SPEC_PENDING_CHATGPT_QA",
+      "semantics": "8 = น้ำจากหลังคาส่วนหนึ่งไหลลงโดนผนังดินของอาคารส่วนที่อยู่ติดกัน (✗) — ต้นฉบับมีเฉพาะภาพเตือน ไม่มีภาพเปรียบเทียบแบบถูกต้อง",
+      "status": "IMPLEMENTED_C5_CORRECTION_PENDING_CHATGPT_FINAL_VISUAL_QA",
+      "c5_note": "C5: ต้นฉบับ (PDF 059 หน้า ๑๑๕ รูปล่าง) เป็นภาพเตือนภาพเดียว เครื่องหมาย 8/✗; ช่อง 'ชายคายื่นยาว + ร่องระบายน้ำ (✓)' ที่สเปก G3 เพิ่มไว้ไม่มีในต้นฉบับ จึงตัดออก. C5B: เปลี่ยนจากหลังคาสองจั่วสมมาตรเทน้ำลงผนังกลาง เป็นอาคารสองส่วนติดกัน/เหลื่อมกัน น้ำจากชายคาของส่วนหนึ่งไหลลงโดนผนังดินของอีกส่วน ตัดการกร่อนที่ฐานออก; ข้อความในหนังสือข้างภาพ: ระวังไม่ให้ชายคาหันไปในทิศทางที่จะไปเจอกับตัวผนังบ้าน เพราะน้ำฝนจะชะทำให้ผนังพังได้",
       "width": 800,
       "height": 420
     }

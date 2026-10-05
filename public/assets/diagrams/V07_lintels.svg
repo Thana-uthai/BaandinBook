@@ -1,55 +1,78 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="900" height="420" role="img" aria-labelledby="t d" font-family="Sarabun, 'Noto Sans Thai', Tahoma, sans-serif" font-size="18">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 1000" width="620" height="1000" role="img" aria-labelledby="t d" font-family="Sarabun, 'Noto Sans Thai', Tahoma, sans-serif" font-size="18">
   <title id="t">V07 ลักษณะของทับหลังในแบบต่าง ๆ</title>
-  <desc id="d">ผังแสดงการติดตั้งคานทับหลังเหนือช่องเปิด: แบบถูกต้อง คานทับหลังไม้ยื่นเลยขอบวงกบเข้าไปฝังในผนังดินข้างละอย่างน้อย ๑๕ เซนติเมตร (✓); แบบเสี่ยงพังทลาย คานสั้นพอดีขอบวงกบ ไม่มีระยะถ่ายน้ำหนัก (✗); และโครงสร้างซุ้มโค้งรับแรง (Arch) เหนือช่องเปิด. ที่มา: ภาพลายเส้นต้นฉบับ PDF 056 / หนังสือหน้า ๑๐๗ · วาดใหม่ตามสเปก G3 · EDITORIAL (D008)</desc>
+  <desc id="d">ภาพตัดแนวดิ่งเรียงซ้อนกัน ๔ แบบตามต้นฉบับ แสดงผนังเหนือช่องเปิด ทับหลัง และวงกบ: แบบที่ ๑ ทับหลังเรียบบนวงกบ เครื่องหมาย ✗ (ต้นฉบับ 8); แบบที่ ๒ แผ่นไม้มีบัวหยดน้ำ เครื่องหมาย ✓ (ต้นฉบับ 4); แบบที่ ๓ ไม้ท่อนใหญ่ เครื่องหมาย ✓ (ต้นฉบับ 4); แบบที่ ๔ ไม้ท่อนเล็กหลายท่อน เครื่องหมาย ✓ (ต้นฉบับ 4). ป้ายตามต้นฉบับ: วงกบ แผ่นไม้ บัวหยดน้ำ ไม้ท่อนใหญ่ ไม้ท่อนเล็ก. ข้อความข้างภาพในหนังสือระบุว่าทับหลังควรกว้างอย่างน้อย ๑๕ เซนติเมตร. ที่มา: ภาพลายเส้นต้นฉบับ PDF 055 / หนังสือหน้า ๑๐๗ · วาดใหม่ตามผลตรวจเทียบสแกน C5/C5B (ChatGPT) · EDITORIAL (D008)</desc>
   <defs>
     <symbol id="ok" viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#2e7d32"/><polyline points="10,21 17,28 30,13" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="no" viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#c62828"/><path d="M12 12 L28 28 M28 12 L12 28" stroke="#fff" stroke-width="4.5" stroke-linecap="round"/></symbol>
-    <marker id="dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#1d4ed8"/></marker>
-    <pattern id="brick" width="40" height="20" patternUnits="userSpaceOnUse"><rect width="40" height="20" fill="#d9b38c"/><path d="M0 10 H40 M20 0 V10 M0 10 V20 M40 10 V20" stroke="#b58a5e" stroke-width="1"/></pattern>
+    <pattern id="earth" width="14" height="14" patternUnits="userSpaceOnUse"><rect width="14" height="14" fill="#e8d7c3"/><path d="M0 14 L14 0" stroke="#9c7a56" stroke-width="1.4"/></pattern>
+    <pattern id="wood" width="10" height="6" patternUnits="userSpaceOnUse"><rect width="10" height="6" fill="#b07a45"/><path d="M0 3 H10" stroke="#7a4c22" stroke-width="1"/></pattern>
   </defs>
-  <rect width="900" height="420" fill="#fff"/>
-  <!-- Panel 1: correct -->
-  <g transform="translate(20 0)">
-    <text x="140" y="34" text-anchor="middle" font-weight="700">๑. ทับหลังยื่นเข้าผนังทั้งสองข้าง</text>
-    <rect x="20" y="60" width="240" height="300" fill="url(#brick)" stroke="#5a3b1c" stroke-width="3"/>
-    <!-- opening -->
-    <rect x="90" y="170" width="100" height="190" fill="#fff" stroke="#5a3b1c" stroke-width="2"/>
-    <rect x="90" y="170" width="100" height="190" fill="none" stroke="#8a5a2b" stroke-width="6"/>
-    <!-- lintel extends 15cm each side -->
-    <rect x="50" y="142" width="180" height="28" fill="#8a5a2b" stroke="#3d2a16" stroke-width="2"/>
-    <text x="140" y="162" text-anchor="middle" fill="#fff" font-size="14">คานทับหลังไม้</text>
-    <!-- dimension arrows -->
-    <g stroke="#1d4ed8" stroke-width="2" fill="none">
-      <line x1="50" y1="124" x2="90" y2="124" marker-start="url(#dim)" marker-end="url(#dim)"/>
-      <line x1="190" y1="124" x2="230" y2="124" marker-start="url(#dim)" marker-end="url(#dim)"/>
-      <line x1="50" y1="116" x2="50" y2="140" stroke-dasharray="3 3"/><line x1="90" y1="116" x2="90" y2="140" stroke-dasharray="3 3"/>
-      <line x1="190" y1="116" x2="190" y2="140" stroke-dasharray="3 3"/><line x1="230" y1="116" x2="230" y2="140" stroke-dasharray="3 3"/>
+  <rect width="620" height="1000" fill="#fff"/>
+  <text x="310" y="36" text-anchor="middle" font-weight="700" font-size="21">ลักษณะของทับหลังในแบบต่าง ๆ</text>
+  <text x="310" y="60" text-anchor="middle" font-size="14" fill="#555">ภาพตัดแนวดิ่ง เรียงซ้อนกัน ๔ แบบตามต้นฉบับ (บนลงล่าง)</text>
+
+  <!-- ===== ๑ plain lintel on the frame — source 8 → ✗ ===== -->
+  <g transform="translate(0 80)">
+    <rect x="200" y="0" width="140" height="70" fill="url(#earth)" stroke="#5a3b1c" stroke-width="2"/>
+    <!-- flat lintel board flush with the wall faces -->
+    <rect x="200" y="70" width="140" height="18" fill="url(#wood)" stroke="#3d2a16" stroke-width="2"/>
+    <!-- window/door frame member (วงกบ) under the lintel -->
+    <rect x="200" y="88" width="140" height="22" fill="#f4e6cf" stroke="#3d2a16" stroke-width="2"/>
+    <!-- opening below (void) -->
+    <rect x="200" y="110" width="140" height="70" fill="none" stroke="#9c7a56" stroke-width="1.2" stroke-dasharray="5 4"/>
+    <line x1="340" y1="99" x2="392" y2="99" stroke="#333" stroke-width="1"/>
+    <text x="398" y="104" font-size="16">วงกบ</text>
+    <text x="150" y="104" text-anchor="end" font-size="16" fill="#333">แบบที่ ๑</text>
+    <use href="#no" x="520" y="60" width="44" height="44"/>
+  </g>
+
+  <!-- ===== ๒ wood board with drip moulding — source 4 → ✓ ===== -->
+  <g transform="translate(0 300)">
+    <rect x="200" y="0" width="140" height="70" fill="url(#earth)" stroke="#5a3b1c" stroke-width="2"/>
+    <!-- wood board (แผ่นไม้) projecting slightly past the outer face -->
+    <rect x="184" y="70" width="156" height="16" fill="url(#wood)" stroke="#3d2a16" stroke-width="2"/>
+    <!-- drip moulding (บัวหยดน้ำ) under the projecting edge -->
+    <path d="M184 86 L184 100 Q192 104 200 96 L200 86 Z" fill="#8a5a2b" stroke="#3d2a16" stroke-width="2"/>
+    <rect x="200" y="86" width="140" height="22" fill="#f4e6cf" stroke="#3d2a16" stroke-width="2"/>
+    <rect x="200" y="108" width="140" height="70" fill="none" stroke="#9c7a56" stroke-width="1.2" stroke-dasharray="5 4"/>
+    <line x1="340" y1="78" x2="392" y2="78" stroke="#333" stroke-width="1"/>
+    <text x="398" y="83" font-size="16">แผ่นไม้</text>
+    <line x1="186" y1="100" x2="150" y2="124" stroke="#333" stroke-width="1"/>
+    <text x="146" y="130" text-anchor="end" font-size="16">บัวหยดน้ำ</text>
+    <text x="150" y="80" text-anchor="end" font-size="16" fill="#333">แบบที่ ๒</text>
+    <use href="#ok" x="520" y="60" width="44" height="44"/>
+  </g>
+
+  <!-- ===== ๓ one large log — source 4 → ✓ ===== -->
+  <g transform="translate(0 520)">
+    <rect x="200" y="0" width="140" height="54" fill="url(#earth)" stroke="#5a3b1c" stroke-width="2"/>
+    <circle cx="270" cy="88" r="36" fill="#b07a45" stroke="#3d2a16" stroke-width="2"/>
+    <circle cx="270" cy="88" r="22" fill="none" stroke="#7a4c22" stroke-width="1.4"/>
+    <circle cx="270" cy="88" r="9" fill="none" stroke="#7a4c22" stroke-width="1.4"/>
+    <rect x="200" y="124" width="140" height="22" fill="#f4e6cf" stroke="#3d2a16" stroke-width="2"/>
+    <rect x="200" y="146" width="140" height="50" fill="none" stroke="#9c7a56" stroke-width="1.2" stroke-dasharray="5 4"/>
+    <line x1="306" y1="88" x2="392" y2="88" stroke="#333" stroke-width="1"/>
+    <text x="398" y="93" font-size="16">ไม้ท่อนใหญ่</text>
+    <text x="150" y="93" text-anchor="end" font-size="16" fill="#333">แบบที่ ๓</text>
+    <use href="#ok" x="520" y="60" width="44" height="44"/>
+  </g>
+
+  <!-- ===== ๔ several small logs — source 4 → ✓ ===== -->
+  <g transform="translate(0 740)">
+    <rect x="200" y="0" width="140" height="62" fill="url(#earth)" stroke="#5a3b1c" stroke-width="2"/>
+    <g fill="#b07a45" stroke="#3d2a16" stroke-width="2">
+      <circle cx="222" cy="80" r="17"/><circle cx="256" cy="80" r="17"/><circle cx="290" cy="80" r="17"/><circle cx="324" cy="80" r="17"/>
     </g>
-    <text x="70" y="108" text-anchor="middle" fill="#1d4ed8" font-size="14" font-weight="700">≥ ๑๕ ซม.</text>
-    <text x="210" y="108" text-anchor="middle" fill="#1d4ed8" font-size="14" font-weight="700">≥ ๑๕ ซม.</text>
-    <text x="140" y="392" text-anchor="middle" font-weight="700">ถ่ายน้ำหนักลงผนัง — ถูกต้อง</text>
-    <use href="#ok" x="220" y="66" width="44" height="44"/>
+    <g fill="none" stroke="#7a4c22" stroke-width="1.4"><circle cx="222" cy="80" r="8"/><circle cx="256" cy="80" r="8"/><circle cx="290" cy="80" r="8"/><circle cx="324" cy="80" r="8"/></g>
+    <rect x="200" y="98" width="140" height="22" fill="#f4e6cf" stroke="#3d2a16" stroke-width="2"/>
+    <rect x="200" y="120" width="140" height="50" fill="none" stroke="#9c7a56" stroke-width="1.2" stroke-dasharray="5 4"/>
+    <line x1="342" y1="80" x2="392" y2="80" stroke="#333" stroke-width="1"/>
+    <text x="398" y="85" font-size="16">ไม้ท่อนเล็ก</text>
+    <text x="150" y="85" text-anchor="end" font-size="16" fill="#333">แบบที่ ๔</text>
+    <use href="#ok" x="520" y="60" width="44" height="44"/>
   </g>
-  <!-- Panel 2: wrong -->
-  <g transform="translate(320 0)">
-    <text x="140" y="34" text-anchor="middle" font-weight="700">๒. ทับหลังสั้นพอดีขอบวงกบ</text>
-    <rect x="20" y="60" width="240" height="300" fill="url(#brick)" stroke="#5a3b1c" stroke-width="3"/>
-    <rect x="90" y="170" width="100" height="190" fill="#fff" stroke="#5a3b1c" stroke-width="2"/>
-    <rect x="90" y="170" width="100" height="190" fill="none" stroke="#8a5a2b" stroke-width="6"/>
-    <rect x="90" y="142" width="100" height="28" fill="#8a5a2b" stroke="#3d2a16" stroke-width="2"/>
-    <!-- cracks -->
-    <g stroke="#c62828" stroke-width="2.5" fill="none"><path d="M86 140 l-8 -14 l6 -12 l-8 -14"/><path d="M194 140 l8 -14 l-6 -12 l8 -14"/><path d="M140 140 l-4 -16 l6 -10"/></g>
-    <text x="140" y="392" text-anchor="middle" font-weight="700" fill="#c62828">ไม่มีระยะถ่ายน้ำหนัก — เสี่ยงพังทลาย</text>
-    <use href="#no" x="220" y="66" width="44" height="44"/>
-  </g>
-  <!-- Panel 3: arch -->
-  <g transform="translate(620 0)">
-    <text x="140" y="34" text-anchor="middle" font-weight="700">๓. ซุ้มโค้งรับแรง (Arch)</text>
-    <rect x="20" y="60" width="240" height="300" fill="url(#brick)" stroke="#5a3b1c" stroke-width="3"/>
-    <path d="M90 360 V200 A50 50 0 0 1 190 200 V360 Z" fill="#fff" stroke="#5a3b1c" stroke-width="2"/>
-    <!-- arch voussoirs -->
-    <path d="M78 360 V200 A62 62 0 0 1 202 200 V360" fill="none" stroke="#8a5a2b" stroke-width="12"/>
-    <g stroke="#3d2a16" stroke-width="1.5"><line x1="84" y1="200" x2="96" y2="200"/><line x1="184" y1="200" x2="196" y2="200"/><line x1="140" y1="138" x2="140" y2="150"/><line x1="97" y1="160" x2="106" y2="169"/><line x1="183" y1="160" x2="174" y2="169"/><line x1="113" y1="144" x2="118" y2="155"/><line x1="167" y1="144" x2="162" y2="155"/></g>
-    <text x="140" y="392" text-anchor="middle" font-weight="700">โค้งถ่ายแรงลงผนังสองข้าง</text>
-  </g>
+
+  <!-- footer: adjacent book text (not figure geometry) + provenance -->
+  <text x="310" y="958" text-anchor="middle" font-size="14" fill="#555">ข้อความข้างภาพในหนังสือ: ทับหลังควรกว้างอย่างน้อย ๑๕ ซม.</text>
+  <text x="310" y="980" text-anchor="middle" font-size="14" fill="#555">ที่มา: หนังสือหน้า ๑๐๗ (PDF 055) · วาดใหม่ตามผลตรวจต้นฉบับ C5/C5B · EDITORIAL (D008)</text>
 </svg>
