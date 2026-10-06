@@ -8,7 +8,7 @@ export default defineConfig({
   output: 'static',
   trailingSlash: 'never',
   build: {
-    format: 'file',
+    format: 'directory',
   },
   compressHTML: true,
 });
