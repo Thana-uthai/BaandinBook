@@ -100,14 +100,34 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2em 0; }
 .site-nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.25rem; }
 .site-nav a { display: block; padding: 0.55rem 0.75rem; border-radius: var(--radius); text-decoration: none; font-weight: 600; color: var(--ink-2); }
 .site-nav a[aria-current="page"], .site-nav a:hover { background: var(--editorial-bg); color: var(--brand); }
+/* header search: GET /search?q=… (no backend); sits between brand and nav, wraps below the brand on small screens */
+.brand { min-width: 0; }
+.header-search { display: flex; align-items: stretch; gap: 0; flex: 1 1 14rem; min-width: 0; max-width: 24rem; }
+.header-search input[type="search"] {
+  font: inherit; font-size: 0.95rem; width: 100%; min-width: 0; padding: 0.45rem 0.7rem;
+  border: 1px solid var(--line); border-right: 0; border-radius: var(--radius) 0 0 var(--radius);
+  background: var(--bg); color: var(--ink);
+}
+.header-search input[type="search"]::placeholder { color: var(--muted); }
+.header-search button {
+  font: inherit; font-size: 0.95rem; font-weight: 600; padding: 0.45rem 0.8rem; cursor: pointer; white-space: nowrap;
+  border: 1px solid var(--line); border-radius: 0 var(--radius) var(--radius) 0;
+  background: var(--editorial-bg); color: var(--brand);
+}
+.header-search button:hover { background: var(--brand); color: #fff; border-color: var(--brand); }
 @media (max-width: 760px) {
-  .nav-toggle { width: 100%; }
+  .header-search { order: 2; flex-basis: 100%; max-width: none; }
+  .nav-toggle { order: 3; width: 100%; }
   .nav-toggle[open] summary { margin-bottom: 0.5rem; }
   .site-nav ul { flex-direction: column; }
 }
 @media (min-width: 761px) {
   .nav-toggle { margin-left: auto; }
   .nav-toggle summary { display: none; }
+}
+@media (min-width: 761px) and (max-width: 1040px) {
+  /* tablet: brand + search on the first line, nav on its own line below */
+  .nav-toggle { flex-basis: 100%; margin-left: 0; }
 }
 
 main { max-width: var(--maxw); margin: 0 auto; padding: 1rem 1rem 3rem; }

@@ -35,6 +35,13 @@ const path = Astro.url.pathname;
           <span class="mark" aria-hidden="true"></span>
           <span>จากดินสู่บ้าน <small>คลังความรู้บ้านดินจากหนังสือ พ.ศ. 2548</small></span>
         </a>
+        {path !== '/search' && (
+          <form class="header-search" role="search" action="/search" method="get" aria-label="ค้นหาทั้งเว็บ">
+            <label for="header-q" class="sr-only">คำค้น</label>
+            <input type="search" id="header-q" name="q" placeholder="ค้นหา เช่น ปลวก หลังคา" autocomplete="off" enterkeyhint="search" />
+            <button type="submit">ค้นหา</button>
+          </form>
+        )}
         <details class="nav-toggle">
           <summary aria-label="เปิดเมนู">เมนู</summary>
           <nav class="site-nav" aria-label="เมนูหลัก">
