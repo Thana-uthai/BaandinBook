@@ -32,7 +32,16 @@ const path = Astro.url.pathname;
     <header class="site-header">
       <div class="bar">
         <a class="brand" href="/" aria-label="จากดินสู่บ้าน หน้าแรก">
-          <span class="mark" aria-hidden="true"></span>
+          <span class="mark" aria-hidden="true">
+            <!-- small mud-house mark: earthen wall, thatch roof, door. Decorative. -->
+            <svg viewBox="0 0 40 40" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 33 H34" stroke="#51423a" stroke-width="2"/>
+              <path d="M9 32 V19 H31 V32 Z" fill="#e4c9a4" stroke="#7d3a1e" stroke-width="2"/>
+              <path d="M5 20 L20 7 L35 20" fill="#c48a1f" stroke="#7d3a1e" stroke-width="2.2"/>
+              <path d="M17 32 V24 H23 V32" fill="#a9502b" stroke="#7d3a1e" stroke-width="1.6"/>
+              <path d="M12 23 H14.5 M25.5 23 H28" stroke="#7d3a1e" stroke-width="1.6"/>
+            </svg>
+          </span>
           <span>จากดินสู่บ้าน <small>คลังความรู้บ้านดินจากหนังสือ พ.ศ. 2548</small></span>
         </a>
         <details class="nav-toggle">
